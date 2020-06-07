@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
-    <title>GDUFE在线考试系统</title>
+    <title>WK在线考试系统</title>
     <link rel="stylesheet" th:href="@{https://cdn.bootcss.com/semantic-ui/2.2.13/semantic.min.css}" />
     <link rel="stylesheet" th:href="@{https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css}" />
     <!-- TODO::文件上传 -->
@@ -62,9 +62,8 @@
                     <div class="content">
                         <div class="header" th:text="${current_account.name}"></div>
                         <div class="meta">
-                            <!--<a class="group">信息学院</a>-->
                             <div class="group">
-                                <i class="student icon"></i>信息学院
+                                <i class="student icon"></i>计算机软件学院
                             </div>
                         </div>
                         <div class="description" th:text="${current_account.description}"></div>
@@ -160,33 +159,7 @@
 <!-- 不可抗力元素 -->
 <div class="second-footer">
 </div>
-<div id="footer">
-    <div class="ui container">
-        <div class="ui stackable two columns grid">
-            <div class="column">
-                <div class="ui two columns grid">
-                    <div class="column">
-                        <h3>项目介绍</h3>
-                        在线考试系统是一个在线测试学习系统，并用于辅助课程教学和学生学习。
-                    </div>
-                    <div class="column">
-                        <h3>联系我们</h3>
-                        如有问题请发邮件到
-                        zzqnxx@foxmail.com
-                    </div>
-                </div>
-            </div>
-            <div class="right aligned column">
-                &copy; 2018 GDUFE All Rights Reserved &nbsp;&nbsp;
-                <br />
-                网站版本：<a href="#">v1.0.0 Beta #20180109</a>&nbsp;&nbsp;
-                服务器时间：<span id="current_server_timer"></span>
-                <br />
-                站长统计 | 今日IP[91] | 今日PV[4511] | 昨日IP[133] | 昨日PV[10109] | 当前在线[1]
-            </div>
-        </div>
-    </div>
-</div>
+<nav th:insert="~{public/public :: footer}"></nav>
 <script th:inline="javascript">
     /*<![CDATA[*/
     var contextPath = /*[[${#httpServletRequest.getContextPath()}]]*/;

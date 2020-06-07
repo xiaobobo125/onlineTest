@@ -18,7 +18,6 @@ import java.util.Map;
  * @Description:
  */
 @Controller
-@RequestMapping("")
 public class ProblemController extends BaseController {
 
 

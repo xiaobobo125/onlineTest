@@ -1,6 +1,7 @@
 package com.bolife.online.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * @Auther: Mr.BoBo
@@ -8,5 +9,6 @@ import org.springframework.stereotype.Controller;
  * @Description:
  */
 @Controller
+@RequestMapping("/comment")
 public class CommentController {
 }

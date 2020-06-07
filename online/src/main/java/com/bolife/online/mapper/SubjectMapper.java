@@ -2,6 +2,7 @@ package com.bolife.online.mapper;
 
 import com.bolife.online.entity.Subject;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -15,4 +16,6 @@ public interface SubjectMapper {
     public List<Subject> getSubjects();
 
     Integer getCount();
+
+    Subject getSubjectById(@Param("id") Integer id);
 }

@@ -55,4 +55,9 @@ public class SubjectServiceImpl implements SubjectService {
         data.put("subjects", subjects);
         return data;
     }
+
+    @Override
+    public Subject getSubjectById(Integer problemsetId) {
+        return subjectMapper.getSubjectById(problemsetId);
+    }
 }

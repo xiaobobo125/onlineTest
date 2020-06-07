@@ -1,5 +1,7 @@
 package com.bolife.online.service;
 
+import com.bolife.online.entity.Subject;
+
 import java.util.Map;
 
 /**
@@ -9,4 +11,6 @@ import java.util.Map;
  */
 public interface SubjectService {
     public Map<String,Object> getSubjects(int pageNum,int pageSize);
+
+    Subject getSubjectById(Integer problemsetId);
 }

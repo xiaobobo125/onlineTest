@@ -67,4 +67,9 @@ public class ContestServiceImpl implements ContestService {
         data.put("contests", contests);
         return data;
     }
+
+    @Override
+    public Contest getContestById(int contestId) {
+        return contestMapper.getContestById(contestId);
+    }
 }

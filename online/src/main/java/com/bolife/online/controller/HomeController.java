@@ -1,23 +1,17 @@
 package com.bolife.online.controller;
 
 import com.bolife.online.dto.AjaxResult;
-import com.bolife.online.entity.Account;
-import com.bolife.online.entity.Post;
-import com.bolife.online.service.AccountService;
-import com.bolife.online.service.ContestService;
-import com.bolife.online.service.PostService;
-import com.bolife.online.service.SubjectService;
+import com.bolife.online.entity.*;
+import com.bolife.online.service.*;
 import com.bolife.online.util.FinalDefine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -39,15 +33,36 @@ public class HomeController extends BaseController {
 
     @Autowired
     private PostService postService;
+
+    @Autowired
+    private GraderService graderService;
+
+    @Autowired
+    private QuestionService questionService;
+
     @RequestMapping("/contest/index")
     public String getContestIndex(HttpServletRequest request,
                                   @RequestParam(value = "page", defaultValue = "1") int page,
                                   Model model) {
         logger.info("在session中获取用户信息");
         Account user = (Account) request.getSession().getAttribute(FinalDefine.CURRENT_ACCOUNT);
-        model.addAttribute(FinalDefine.CURRENT_ACCOUNT);
+        model.addAttribute(FinalDefine.CURRENT_ACCOUNT,user);
         logger.info("获取试题信息");
         Map<String, Object> contests = contestService.getContests(page, FinalDefine.contestPageSize);
+        List<Contest> contestList = (List<Contest>) contests.get("contests");
+        logger.info("获取用户成绩");
+        if(user != null){
+            for (Contest contest : contestList) {
+                Grade gradeByConIdAndStuId = graderService.getGradeByConIdAndStuId(contest.getId(), user.getId());
+                if(gradeByConIdAndStuId != null){
+                    System.out.println(gradeByConIdAndStuId);
+                    contest.setUserState(1);
+                }else {
+                    contest.setUserState(0);
+                }
+            }
+        }
+        contests.put("contests",contestList);
         model.addAttribute(FinalDefine.DATA,contests);
         return  "contest/index";
     }
@@ -58,7 +73,7 @@ public class HomeController extends BaseController {
                                  Model model){
         logger.info("在session中获取用户信息");
         Account user = (Account) request.getSession().getAttribute(FinalDefine.CURRENT_ACCOUNT);
-        model.addAttribute(FinalDefine.CURRENT_ACCOUNT);
+        model.addAttribute(FinalDefine.CURRENT_ACCOUNT,user);
         logger.info("获取题目列表");
         Map<String, Object> subjects = subjectService.getSubjects(page, FinalDefine.contestPageSize);
         model.addAttribute(FinalDefine.DATA,subjects);
@@ -71,7 +86,7 @@ public class HomeController extends BaseController {
                              Model model){
         logger.info("在session中获取用户信息");
         Account user = (Account) request.getSession().getAttribute(FinalDefine.CURRENT_ACCOUNT);
-        model.addAttribute(FinalDefine.CURRENT_ACCOUNT);
+        model.addAttribute(FinalDefine.CURRENT_ACCOUNT,user);
         Map<String, Object> posts = postService.getPosts(page, FinalDefine.contestPageSize);
         List<Post> postList = (List<Post>) posts.get("posts");
         List<Account> allAccount = accountService.getAllAccount();
@@ -99,4 +114,41 @@ public class HomeController extends BaseController {
         return new AjaxResult().setData(localDateTime);
     }
 
+    @RequestMapping(value="/problemset/{problemsetId}/problems", method= RequestMethod.GET)
+    public String problemList(HttpServletRequest request,
+                              @PathVariable("problemsetId") Integer problemsetId,
+                              @RequestParam(value = "page", defaultValue = "1") int page,
+                              @RequestParam(value = "content", defaultValue = "") String content,
+                              @RequestParam(value = "difficulty", defaultValue = "0") int difficulty,
+                              Model model) {
+        Account currentAccount = (Account) request.getSession().getAttribute(FinalDefine.CURRENT_ACCOUNT);
+        model.addAttribute(FinalDefine.CURRENT_ACCOUNT, currentAccount);
+        Map<String,Object> data = questionService.getQuestionByPCD(page,FinalDefine.questionPageSize,problemsetId,content,difficulty);
+        Subject subject = subjectService.getSubjectById(problemsetId);
+        data.put("subject", subject);
+        model.addAttribute(FinalDefine.DATA, data);
+        return "/problem/problemlist";
+    }
+    @RequestMapping(value="/problemset/{problemsetId}/problem/{problemId}", method= RequestMethod.GET)
+    public String problemDetail(HttpServletRequest request,
+                                @PathVariable("problemsetId") Integer problemsetId,
+                                @PathVariable("problemId") Integer problemId,
+                                Model model) {
+        Account currentAccount = (Account) request.getSession().getAttribute(FinalDefine.CURRENT_ACCOUNT);
+        model.addAttribute(FinalDefine.CURRENT_ACCOUNT, currentAccount);
+        Map<String, Object> data = new HashMap<>();
+        Question question = questionService.getQuestionById(problemId);
+        Subject subject = subjectService.getSubjectById(problemsetId);
+        data.put("question", question);
+        data.put("subject", subject);
+        model.addAttribute(FinalDefine.CURRENT_ACCOUNT, currentAccount);
+        model.addAttribute(FinalDefine.DATA, data);
+        return "/problem/problemdetail";
+    }
+
+    @RequestMapping("/404")
+    public String NotFound(@RequestParam(required = false) String message, Model model) {
+        model.addAttribute("message", message);
+        return "error/404";
+    }
 }

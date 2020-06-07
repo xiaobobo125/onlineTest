@@ -21,5 +21,17 @@
     </select>
     <select id="getPosts" resultMap="BaseResultMap">
         SELECT * FROM t_post
+        ORDER BY last_reply_time DESC, update_time DESC, create_time DESC
     </select>
+    <select id="getPostById" resultMap="BaseResultMap">
+        SELECT * FROM t_post WHERE id=#{postId}
+    </select>
+    <insert id="insert" parameterType="com.bolife.online.entity.Post" >
+        insert into t_post
+        (author_id, title, html_content, text_content,update_time,last_reply_time)
+        values (#{post.authorId}, #{post.title}, #{post.htmlContent}, #{post.textContent},#{post.updateTime},#{post.lastReplyTime})
+    </insert>
+    <delete id="deletePost" parameterType="Integer">
+        DELETE FROM t_post WHERE id=#{pid}
+    </delete>
 </mapper>

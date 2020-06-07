@@ -39,4 +39,5 @@
     <mvc:resources mapping="/css/**" location="/assert/css/"/>
     <mvc:resources mapping="/img/**" location="/assert/img/"/>
     <mvc:resources mapping="/js/**" location="/assert/js/"/>
+    <mvc:resources mapping="/upload/**" location="file:D:/226/git/onlineTest/upload/" cache-period="3155926"/>
 </beans>

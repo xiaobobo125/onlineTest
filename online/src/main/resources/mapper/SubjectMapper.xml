@@ -21,4 +21,9 @@
     <select id="getCount" resultType="integer">
         SELECT COUNT(*) FROM t_subject
     </select>
+    <select id="getSubjectById" resultMap="BaseResultMap">
+        SELECT * FROM t_subject
+        WHERE id = #{id}
+    </select>
+
 </mapper>

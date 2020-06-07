@@ -23,4 +23,8 @@
         <include refid="Base_Column_List"/>
         FROM t_contest;
     </select>
+
+    <select id="getContestById" resultMap="BaseResultMap">
+        SELECT * FROM t_contest WHERE id = #{contestId}
+    </select>
 </mapper>

@@ -262,7 +262,6 @@ var contestDetailPage = {
         for (var i = 0; i < contestDetailPage.data.questions.length; i++) {
             console.log(contestDetailPage.data.questions[i].answer);
         }
-
         var answerJsonStr = '';
         for (var i = 0; i < contestDetailPage.data.questions.length; i++) {
             answerJsonStr += contestDetailPage.data.questions[i].answer;
@@ -300,6 +299,11 @@ var contestDetailPage = {
             $("#waitSubmitModal").modal("hide");
             window.location.href = app.URL.contestIndexUrl();
         }, 5000);
+    },
+    pageUnload: function () {
+        if(confirm("退出后已作答的题目将不会保存，是否继续？")){
+            window.location.href = app.URL.contestIndexUrl();
+        }
     },
 
 };

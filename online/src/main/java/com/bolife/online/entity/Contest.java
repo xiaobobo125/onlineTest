@@ -17,6 +17,7 @@ public class Contest {
     private Date startTime;
     private Date endTime;
     private int state;
+    private int userState;
 
     private String subjectName;
 
@@ -100,6 +101,14 @@ public class Contest {
         this.subjectName = subjectName;
     }
 
+    public int getUserState() {
+        return userState;
+    }
+
+    public void setUserState(int userState) {
+        this.userState = userState;
+    }
+
     @Override
     public String toString() {
         return "Contest{" +
@@ -112,6 +121,7 @@ public class Contest {
                 ", startTime=" + startTime +
                 ", endTime=" + endTime +
                 ", state=" + state +
+                ", userState=" + userState +
                 ", subjectName='" + subjectName + '\'' +
                 '}';
     }

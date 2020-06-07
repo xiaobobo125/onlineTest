@@ -2,6 +2,7 @@ package com.bolife.online.mapper;
 
 import com.bolife.online.entity.Contest;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -23,4 +24,6 @@ public interface ContestMapper {
      * @return
      */
     public List<Contest> getContests();
+
+    Contest getContestById(@Param("contestId") int contestId);
 }

@@ -23,4 +23,14 @@ public class AccountServiceImpl implements AccountService {
     public List<Account> getAllAccount() {
         return accountMapper.getAccounts();
     }
+
+    @Override
+    public Account getAccountByUsername(String username) {
+        return accountMapper.getAccountByUsername(username);
+    }
+
+    @Override
+    public Account getAccountById(int authorId) {
+        return accountMapper.getAccountById(authorId);
+    }
 }
