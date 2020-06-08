@@ -28,4 +28,15 @@
     <select id="getAccountById" resultMap="BaseResultMap">
         SELECT * FROM t_account WHERE id=#{id}
     </select>
+
+    <update id="updateAccountById" parameterType="com.bolife.online.entity.Account">
+        UPDATE t_account
+        SET
+        password = #{account.password}, qq = #{account.qq}, phone = #{account.phone},
+        email = #{account.email}, description = #{account.description},
+        avatar_img_url = #{account.avatarImgUrl}
+        WHERE
+        id = #{account.id}
+    </update>
+
 </mapper>

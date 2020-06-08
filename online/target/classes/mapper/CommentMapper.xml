@@ -18,4 +18,9 @@
         WHERE post_id = #{postId}
         ORDER BY create_time ASC
     </select>
+    <insert id="insertComment" parameterType="com.bolife.online.entity.Comment" >
+        insert into t_comment
+        (user_id, post_id, content)
+        values (#{comment.userId}, #{comment.postId}, #{comment.content})
+    </insert>
 </mapper>

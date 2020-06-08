@@ -12,4 +12,6 @@ import java.util.List;
  */
 public interface ReplyService {
     public List<Reply> getReplyByPostId(int postId);
+
+    int addReply(Reply reply);
 }

@@ -6,8 +6,8 @@ public class FinalDefine {
     public final static String CURRENT_ACCOUNT = "current_account";
 
     //本地服务器-文件,图片所在位置,图片上传位置
-    public static final String UPLOAD_FILE_PATH = "file:D:/226/git/nlineTest/upload/";
-    public static final String UPLOAD_FILE_IMAGE_PATH = "D:/226/git/nlineTest/upload/images/";
+    public static final String UPLOAD_FILE_PATH = "file:D:/226/git/onlineTest/upload/";
+    public static final String UPLOAD_FILE_IMAGE_PATH = "D:/226/git/onlineTest/upload/images/";
 
     //云服务器-文件,图片所在位置,图片上传位置
 //    public static final String UPLOAD_FILE_PATH = "file:/usr/java/data/springboot-penguin/upload/";

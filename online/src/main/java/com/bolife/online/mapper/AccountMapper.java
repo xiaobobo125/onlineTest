@@ -18,4 +18,6 @@ public interface AccountMapper {
     Account getAccountByUsername(@Param("username") String username);
 
     Account getAccountById(@Param("id") int id);
+
+    boolean updateAccountById(@Param("account") Account account);
 }

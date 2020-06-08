@@ -42,8 +42,13 @@ public class ContestController extends BaseController {
     public String goContestDetail(HttpServletRequest request,
                                   @PathVariable("contestId") int contestId,
                                   Model model){
-        Map<String, Object> data = new HashMap<>();
         Account currentAccount = (Account) request.getSession().getAttribute(FinalDefine.CURRENT_ACCOUNT);
+        //TODO::拦截器过滤处理
+        if (currentAccount == null) {
+            //用户未登录直接返回首页面
+            return "redirect:/";
+        }
+        Map<String, Object> data = new HashMap<>();
         model.addAttribute(FinalDefine.CURRENT_ACCOUNT, currentAccount);
         Contest contest = contestService.getContestById(contestId);
         if(contest == null

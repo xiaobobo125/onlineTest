@@ -27,4 +27,17 @@
     <select id="getGradeByConIdAndStuId" resultMap="BaseResultMap">
         SELECT * FROM t_grade WHERE  student_id = #{studentId} AND contest_id = #{contestId}
     </select>
+    <select id="getCountByStudentId" resultType="int" >
+        SELECT
+        COUNT(1)
+        FROM t_grade
+        WHERE state = 1 AND student_id = #{studentId}
+    </select>
+
+    <select id="getGradesByStudentId" resultMap="BaseResultMap" >
+        SELECT
+        *
+        FROM t_grade
+        WHERE state = 1 AND student_id = #{studentId}
+    </select>
 </mapper>

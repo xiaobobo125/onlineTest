@@ -25,4 +25,8 @@ public interface QuestionMapper {
                               @Param("difficulty") int difficulty);
 
     Question getQuestionById(@Param("id") Integer id);
+
+    int getCountByContent(@Param("content") String content);
+
+    List<Question> getQuestionsByContent(@Param("content")String content);
 }

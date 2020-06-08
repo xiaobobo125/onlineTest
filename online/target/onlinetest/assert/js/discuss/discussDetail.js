@@ -71,7 +71,6 @@ var discussDetailPage = {
         var commentId = $('#replyCommentId').val();
         var atuserId = $('#replyAtuserId').val();
         var content = $('#replyContent').val();
-
         $.ajax({
             url : app.URL.addReplyUrl(),
             type : "POST",

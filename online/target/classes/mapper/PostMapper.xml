@@ -34,4 +34,25 @@
     <delete id="deletePost" parameterType="Integer">
         DELETE FROM t_post WHERE id=#{pid}
     </delete>
+    <update id="updateReplyNumById">
+        UPDATE t_post
+        SET
+         reply_num = reply_num + 1, last_reply_time = #{lastReplyTime}
+        WHERE
+        id = #{postId}
+    </update>
+    <select id="getCountByAuthorId" resultType="int">
+        SELECT
+        COUNT(1)
+        FROM t_post
+        WHERE author_id = #{authorId}
+    </select>
+
+    <select id="getPostsByAuthorId" resultMap="BaseResultMap" >
+        SELECT
+        *
+        FROM t_post
+        WHERE author_id = #{authorId}
+        ORDER BY last_reply_time DESC, update_time DESC, create_time DESC
+    </select>
 </mapper>

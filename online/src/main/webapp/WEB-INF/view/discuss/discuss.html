@@ -60,16 +60,6 @@
                             <p th:text="${item.title}">校招结束回顾：第一份工作的选择有多重要？应该考虑清楚些什么？</p>
                         </a>
                         <div class="extra" style="font-size: 13px;">
-                            <span class="right floated">
-                                <i class="talk outline icon"></i>
-                                <span th:text="${item.replyNum}">23</span>
-                                |
-                                <i class="thumbs outline up icon"></i>
-                                <span>17</span>
-                                |
-                                <i class="unhide icon"></i>
-                                <span>400</span>
-                            </span>
                             <span th:text="${item.author.name}">Mr.BoBo</span>
                             <span th:text="${#dates.format(item.createTime, 'yyyy-MM-dd HH:mm:ss')} + '发表在 [我要提问]'">2018-01-13 11:33:51 发表在 [职业发展]</span>
                             <span th:if="${item.lastReplyTime != null}" th:text="'最后回复:'+${#dates.format(item.lastReplyTime, 'yyyy-MM-dd HH:mm:ss')}">最后回复:2018-01-13 11:33:52</span>

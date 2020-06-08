@@ -60,4 +60,9 @@ public class SubjectServiceImpl implements SubjectService {
     public Subject getSubjectById(Integer problemsetId) {
         return subjectMapper.getSubjectById(problemsetId);
     }
+
+    @Override
+    public List<Subject> getAllSubjects() {
+        return subjectMapper.getSubjects();
+    }
 }

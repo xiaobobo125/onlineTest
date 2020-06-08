@@ -35,7 +35,6 @@
                 <img class="ui avatar image discuss-author-avatar" style="height: 50px;width: 50px;" th:src="@{'/upload/images/'+${data['post'].author.avatarImgUrl}}" />
                 <div class="content">
                     <a href="#" class="header discuss-author-name" th:text="${data['post'].author.name}">
-                        曾庆熙
                     </a>
                     <div class="extra discuss-author-edit-info">
                         <span th:text="'编辑于 '+${#dates.format(data['post'].updateTime, 'yyyy-MM-dd HH:mm:ss')}">编辑于 2018-01-13 11:33:51</span>
@@ -73,7 +72,8 @@
                                 <p th:text="${item.content}">這對我的研究是非常有用.謝謝!</p>
                             </div>
                             <div class="actions">
-                                <a class="reply" th:onclick="'discussDetailPage.showReplyModal('+${itemStats.index}+',0)'">回复</a>
+                                <a class="reply" th:if="${current_account != null}" th:onclick="'discussDetailPage.showReplyModal('+${itemStats.index}+',0)'">回复</a>
+                                <a class="reply" th:if="${current_account == null}" th:onclick="'app.showLogin()'">回复</a>
                             </div>
                         </div>
                         <div class="comments">
@@ -89,10 +89,10 @@
                                         <span class="date" th:text="${#dates.format(item2.createTime, 'yyyy-MM-dd HH:mm:ss')}">刚刚</span>
                                     </div>
                                     <div class="text" th:text="${item2.content}">
-                                        艾略特你永远是多么正确 :)
                                     </div>
                                     <div class="actions">
-                                        <a class="reply" th:onclick="'discussDetailPage.showReplyModal('+${itemStats.index}+','+${item2.user.id}+')'">回复</a>
+                                        <a class="reply" th:if="${current_account != null}" th:onclick="'discussDetailPage.showReplyModal('+${itemStats.index}+','+${item2.user.id}+')'">回复</a>
+                                        <a class="reply" th:if="${current_account == null}" th:onclick="'app.showLogin()'">回复</a>
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +102,8 @@
                         <div class="field">
                             <textarea id="commentContent"></textarea>
                         </div>
-                        <div class="ui blue labeled submit icon button" th:onclick="'discussDetailPage.addCommentsAction()'"><i class="icon edit"></i>回帖</div>
+                        <div class="ui blue labeled submit icon button" th:if="${current_account != null}" th:onclick="'discussDetailPage.addCommentsAction()'"><i class="icon edit"></i>回帖</div>
+                        <div class="ui blue labeled submit icon button" th:if="${current_account == null}" th:onclick="'app.showLogin()'"><i class="icon edit"></i>回帖</div>
                     </form>
                 </div>
             </div>
@@ -129,6 +130,23 @@
 </div>
 <!-- 不可抗力元素 -->
 <div class="second-footer">
+</div>
+<!-- 回复模态框 -->
+<div class="ui mini modal" id="replyModal">
+    <div class="header">回复</div>
+    <div class="content">
+        <form class="ui form" id="replyModalForm">
+            <input type="hidden" id="replyCommentId" />
+            <input type="hidden" id="replyAtuserId" />
+            <div class="field required">
+                <div class="ui input">
+                    <input id="replyContent" type="text" placeholder="" />
+                </div>
+            </div>
+            <div class="ui negative button" id="cancelReplyBtn">取消</div>
+            <div class="ui positive button" id="confirmReplyBtn">确定</div>
+        </form>
+    </div>
 </div>
 <nav th:insert="~{public/public :: footer}"></nav>
 <script th:inline="javascript">

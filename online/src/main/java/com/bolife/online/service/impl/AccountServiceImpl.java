@@ -14,6 +14,7 @@ import java.util.List;
  * @Description:
  */
 @Service
+@SuppressWarnings("all")
 public class AccountServiceImpl implements AccountService {
 
     @Autowired
@@ -32,5 +33,10 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Account getAccountById(int authorId) {
         return accountMapper.getAccountById(authorId);
+    }
+
+    @Override
+    public boolean updateAccount(Account currentAccount) {
+        return accountMapper.updateAccountById(currentAccount);
     }
 }

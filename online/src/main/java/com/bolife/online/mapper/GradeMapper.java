@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 /**
  * @Auther: Mr.BoBo
  * @Date: 2020/6/7 13:26
@@ -16,4 +18,8 @@ public interface GradeMapper {
 
     Grade getGradeByConIdAndStuId(@Param("contestId") Integer contestId,
                                   @Param("studentId") Integer studentId);
+
+    int getCountByStudentId(int studentId);
+
+    List<Grade> getGradesByStudentId(int studentId);
 }

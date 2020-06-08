@@ -72,4 +72,9 @@ public class ContestServiceImpl implements ContestService {
     public Contest getContestById(int contestId) {
         return contestMapper.getContestById(contestId);
     }
+
+    @Override
+    public List<Contest> getAllContests() {
+        return contestMapper.getContests();
+    }
 }

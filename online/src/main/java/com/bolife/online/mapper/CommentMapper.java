@@ -14,4 +14,6 @@ import java.util.List;
 @Mapper
 public interface CommentMapper {
     List<Comment> getCommentByPostId(@Param("postId") int postId);
+
+    Integer insertComment(@Param("comment") Comment comment);
 }

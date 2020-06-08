@@ -55,4 +55,23 @@
     <select id="getQuestionById" resultMap="BaseResultMap">
         SELECT * FROM t_question WHERE id=#{id}
     </select>
+    <select id="getCountByContent" resultType="int">
+        SELECT
+        COUNT(1)
+        FROM t_question
+        WHERE 1 = 1 AND state = 1
+        <if test="content != null and content != ''">
+            AND content LIKE CONCAT(CONCAT('%', #{content}), '%')
+        </if>
+    </select>
+
+    <select id="getQuestionsByContent" resultMap="BaseResultMap" >
+        SELECT
+        *
+        FROM t_question
+        WHERE 1 = 1 AND state = 1
+        <if test="content != null and content != ''">
+            AND content LIKE CONCAT(CONCAT('%', #{content}), '%')
+        </if>
+    </select>
 </mapper>

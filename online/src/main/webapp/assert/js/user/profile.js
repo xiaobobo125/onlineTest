@@ -143,7 +143,6 @@ var profilePage = {
     /**
      * bootstrap上传头像初始化
      */
-    /*
     uploadAvatarInit: function () {
         $("#myfile").fileinput({
             uploadUrl:"/account/api/uploadAvatar",//上传的地址
@@ -199,5 +198,4 @@ var profilePage = {
             console.log("filepreupload");
         });
     },
-    */
 };

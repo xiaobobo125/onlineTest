@@ -23,4 +23,9 @@ public class CommentServiceImpl implements CommenService {
     public List<Comment> getCommentByPostId(int postId) {
         return commentMapper.getCommentByPostId(postId);
     }
+
+    @Override
+    public Integer addComment(Comment comment) {
+        return commentMapper.insertComment(comment);
+    }
 }

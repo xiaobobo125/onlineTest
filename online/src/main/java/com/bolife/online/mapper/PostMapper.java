@@ -4,6 +4,7 @@ import com.bolife.online.entity.Post;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -22,4 +23,10 @@ public interface PostMapper {
     Integer insert(@Param("post") Post post);
 
     void deletePost(@Param("pid") int pid);
+
+    Integer updateReplyNumById(@Param("postId") int postId, @Param("lastReplyTime") Date lastReplyTime);
+
+    int getCountByAuthorId(int authorId);
+
+    List<Post> getPostsByAuthorId(int authorId);
 }

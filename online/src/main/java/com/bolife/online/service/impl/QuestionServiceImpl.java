@@ -69,4 +69,38 @@ public class QuestionServiceImpl implements QuestionService {
     public Question getQuestionById(Integer problemId) {
         return questionMapper.getQuestionById(problemId);
     }
+
+    @Override
+    public Map<String, Object> getQuestionsByContent(int pageNum, int pageSize, String content) {
+        Map<String, Object> data = new HashMap<>();
+        int count = questionMapper.getCountByContent(content);
+        if (count == 0) {
+            data.put("pageNum", 0);
+            data.put("pageSize", 0);
+            data.put("totalPageNum", 1);
+            data.put("totalPageSize", 0);
+            data.put("questionsSize", 0);
+            data.put("questions", new ArrayList<>());
+            return data;
+        }
+        int totalPageNum = count % pageSize == 0 ? count / pageSize : count / pageSize + 1;
+        if (pageNum > totalPageNum) {
+            data.put("pageNum", 0);
+            data.put("pageSize", 0);
+            data.put("totalPageNum", totalPageNum);
+            data.put("totalPageSize", 0);
+            data.put("questionsSize", 0);
+            data.put("questions", new ArrayList<>());
+            return data;
+        }
+        PageHelper.startPage(pageNum, pageSize);
+        List<Question> questions = questionMapper.getQuestionsByContent(content);
+        data.put("pageNum", pageNum);
+        data.put("pageSize", pageSize);
+        data.put("totalPageNum", totalPageNum);
+        data.put("totalPageSize", count);
+        data.put("questionsSize", questions.size());
+        data.put("questions", questions);
+        return data;
+    }
 }

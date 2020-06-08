@@ -15,4 +15,6 @@ public interface AccountService {
     public Account getAccountByUsername(String username);
 
     Account getAccountById(int authorId);
+
+    boolean updateAccount(Account currentAccount);
 }

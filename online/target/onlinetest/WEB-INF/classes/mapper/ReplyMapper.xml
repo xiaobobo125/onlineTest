@@ -20,4 +20,10 @@
         WHERE post_id = #{postId}
         ORDER BY create_time ASC
     </select>
+    <insert id="insertReply" parameterType="com.bolife.online.entity.Reply" >
+        insert into t_reply
+        (user_id, atuser_id, post_id, comment_id, content)
+        values (#{reply.userId}, #{reply.atuserId},
+        #{reply.postId}, #{reply.commentId}, #{reply.content})
+    </insert>
 </mapper>

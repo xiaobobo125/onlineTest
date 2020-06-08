@@ -17,4 +17,8 @@ public interface PostService {
     Integer addPost(Post post);
 
     void deletePost(int pid);
+
+    Boolean updateReplyNumById(int postId);
+
+    Map<String,Object> getPostsByAuthorId(int page, int postPageSize, int id);
 }

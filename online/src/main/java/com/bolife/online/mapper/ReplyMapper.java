@@ -14,4 +14,6 @@ import java.util.List;
 @Mapper
 public interface ReplyMapper {
     List<Reply> getReplyByPostId(@Param("postId") int postId);
+
+    int insertReply(@Param("reply") Reply reply);
 }

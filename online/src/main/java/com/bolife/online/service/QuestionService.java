@@ -16,4 +16,6 @@ public interface QuestionService {
     Map<String,Object> getQuestionByPCD(int page, int questionPageSize, Integer problemsetId, String content, int difficulty);
 
     Question getQuestionById(Integer problemId);
+
+    Map<String,Object> getQuestionsByContent(int page, int questionPageSize, String content);
 }

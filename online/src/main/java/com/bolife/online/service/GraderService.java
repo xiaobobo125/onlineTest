@@ -2,6 +2,8 @@ package com.bolife.online.service;
 
 import com.bolife.online.entity.Grade;
 
+import java.util.Map;
+
 /**
  * @Auther: Mr.BoBo
  * @Date: 2020/6/7 13:25
@@ -11,4 +13,6 @@ public interface GraderService {
     public Integer addGrade(Grade grade);
 
     Grade getGradeByConIdAndStuId(int contestId, int studentId);
+
+    Map<String, Object> getGradesByStudentId(int pageNum, int pageSize, int studentId);
 }

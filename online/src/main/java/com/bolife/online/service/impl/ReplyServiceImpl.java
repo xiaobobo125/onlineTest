@@ -23,4 +23,9 @@ public class ReplyServiceImpl implements ReplyService{
     public List<Reply> getReplyByPostId(int postId) {
         return replyMapper.getReplyByPostId(postId);
     }
+
+    @Override
+    public int addReply(Reply reply) {
+        return replyMapper.insertReply(reply);
+    }
 }
