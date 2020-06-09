@@ -20,4 +20,6 @@ public interface AccountMapper {
     Account getAccountById(@Param("id") int id);
 
     boolean updateAccountById(@Param("account") Account account);
+
+    int getCount();
 }

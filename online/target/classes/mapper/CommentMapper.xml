@@ -18,6 +18,20 @@
         WHERE post_id = #{postId}
         ORDER BY create_time ASC
     </select>
+
+    <select id="getCount" resultType="int">
+        SELECT
+        COUNT(1)
+        FROM t_comment
+    </select>
+
+    <select id="getComments" resultMap="BaseResultMap">
+        SELECT
+        *
+        FROM t_comment
+        ORDER BY create_time ASC
+    </select>
+
     <insert id="insertComment" parameterType="com.bolife.online.entity.Comment" >
         insert into t_comment
         (user_id, post_id, content)

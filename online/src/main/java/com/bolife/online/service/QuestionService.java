@@ -1,6 +1,7 @@
 package com.bolife.online.service;
 
 import com.bolife.online.entity.Question;
+import com.bolife.online.entity.Question_Contest;
 
 import java.util.List;
 import java.util.Map;
@@ -18,4 +19,14 @@ public interface QuestionService {
     Question getQuestionById(Integer problemId);
 
     Map<String,Object> getQuestionsByContent(int page, int questionPageSize, String content);
+
+    int addQuestion(Question question);
+
+    boolean deleteQuestion(int id);
+
+    Integer getQuestionCountByQuestionType(int questionType);
+
+    List<Question> getAllQuestion();
+
+    List<Question> getQuestionByIds(List<Question_Contest> byContestId);
 }

@@ -13,7 +13,7 @@ var manageEditContestProblemPage = {
         //新增题目，弹出新增窗口
         $("#addQuestionBtn").click(function () {
             //输入框初始化数据
-            manageEditContestProblemPage.initAddQuestionData();
+            // manageEditContestProblemPage.initAddQuestionData();
             $("#addQuestionModal").modal({
                 keyboard : false,
                 show : true,
@@ -41,6 +41,8 @@ var manageEditContestProblemPage = {
             manageEditContestProblemPage.updateQuestionAction();
         });
 
+
+
     },
     initAddQuestionData: function () {
         //初始化数据
@@ -54,53 +56,30 @@ var manageEditContestProblemPage = {
         $('#questionParse').val("");
         $('#questionScore').val("");
     },
-    checkAddQuestionData: function (questionTitle, questionContent, questionType,
-                                    optionA, optionB, optionC, optionD,
-                                    questionAnswer, questionParse, questionDifficulty,
-                                    questionValue) {
-        //TODO::校验
+    checkAddQuestionData: function (soloSel,manySel,queAns,program) {
         return true;
-
     },
     addQuestionAction: function () {
-        var questionTitle = $('#questionTitle').val();
-        var questionContent = $('#questionContent').val();
-        var questionType = $('#questionType').val();
-        var optionA = $('#optionA').val();
-        var optionB = $('#optionB').val();
-        var optionC = $('#optionC').val();
-        var optionD = $('#optionD').val();
-        var questionAnswer = $('#questionAnswer').val();
-        var questionParse = $('#questionParse').val();
-        var questionDifficulty = $('#questionDifficulty').val();
-        var questionScore = $('#questionScore').val();
+        var soloSel = $('#soloSel').val();
+        var manySel = $('#manySel').val();
+        var queAns = $('#queAns').val();
+        var program = $('#program').val();
         var contestId = manageEditContestProblemPage.data.contest.id;
-        var subjectId = manageEditContestProblemPage.data.contest.subjectId;
 
-        if (manageEditContestProblemPage.checkAddQuestionData(questionTitle, questionContent,
-                questionType, optionA,optionB, optionC, optionD, questionAnswer, questionParse,
-                questionDifficulty, questionScore)) {
+        if (manageEditContestProblemPage.checkAddQuestionData(soloSel,manySel,queAns,program)) {
             $.ajax({
-                url : app.URL.addQuestionUrl(),
+                url : app.URL.randomContestUrl(),
                 type : "POST",
-                dataType: "json",
-                contentType : "application/json;charset=UTF-8",
+                // dataType: "json",
+                // contentType : "application/json;charset=UTF-8",
                 <!-- 向后端传输的数据 -->
-                data : JSON.stringify({
-                    title: questionTitle,
-                    content: questionContent,
-                    questionType: questionType,
-                    optionA: optionA,
-                    optionB: optionB,
-                    optionC: optionC,
-                    optionD: optionD,
-                    answer: questionAnswer,
-                    parse: questionParse,
-                    subjectId: subjectId,
+                data : {
+                    soloSel: soloSel,
+                    manySel: manySel,
+                    queAns: queAns,
+                    program: program,
                     contestId: contestId,
-                    score: questionScore,
-                    difficulty: questionDifficulty,
-                }),
+                },
                 success:function(result) {
                     if (result && result['success']) {
                         // 验证通过 刷新页面
@@ -226,7 +205,7 @@ var manageEditContestProblemPage = {
     deleteQuestionAction: function (index) {
         $.ajax({
             url : app.URL.deleteQuestionUrl()+index,
-            type : "DELETE",
+            type : "GET",
             dataType: "json",
             contentType : "application/json;charset=UTF-8",
             success:function(result) {
@@ -246,10 +225,4 @@ var manageEditContestProblemPage = {
             }
         });
     }
-
-
-
-
-
-
 };

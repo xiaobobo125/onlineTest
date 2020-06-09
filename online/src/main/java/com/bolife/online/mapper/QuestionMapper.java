@@ -29,4 +29,12 @@ public interface QuestionMapper {
     int getCountByContent(@Param("content") String content);
 
     List<Question> getQuestionsByContent(@Param("content")String content);
+
+    int insertQuestion(@Param("question") Question question);
+
+    Integer deleteQuestion(@Param("id") int id);
+
+    Integer getQuestionCountByQuestionType(@Param("questionType") int questionType);
+
+    List<Question> getAllQuestion();
 }

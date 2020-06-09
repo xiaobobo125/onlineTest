@@ -44,6 +44,9 @@ var app = {
         finishContestUrl: function () {
             return app.data.contextPath+"/contest/api/finishContest/";
         },
+        randomContestUrl: function () {
+            return app.data.contextPath+"/contest/api/randomContest";
+        },
         addQuestionUrl: function () {
             return app.data.contextPath+"/question/api/addQuestion";
         },
@@ -169,4 +172,9 @@ var app = {
         n = n.toString();
         return n[1] ? n : '0' + n;
     },
+    //查询
+    queryQuestionAction: function () {
+        var content = $('#content').val();
+        window.location.href = app.URL.manageQuestionUrl() + '?page=1&content='+content;
+    }
 };

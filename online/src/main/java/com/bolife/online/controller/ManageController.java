@@ -1,22 +1,18 @@
 package com.bolife.online.controller;
 
-import com.bolife.online.entity.Account;
-import com.bolife.online.entity.Question;
-import com.bolife.online.entity.Subject;
-import com.bolife.online.service.ContestService;
-import com.bolife.online.service.QuestionService;
-import com.bolife.online.service.SubjectService;
+import com.bolife.online.entity.*;
+import com.bolife.online.service.*;
 import com.bolife.online.util.FinalDefine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -36,12 +32,26 @@ public class ManageController {
     @Autowired
     private QuestionService questionService;
 
+    @Autowired
+    private AccountService accountService;
+
+    @Autowired
+    private CommenService commenService;
+
+    @Autowired
+    private ReplyService replyService;
+
+    @Autowired
+    private PostService postService;
+
+    @Autowired
+    private Question_ContentService question_contentService;
+
 
     @RequestMapping(value={"/login","/"}, method= RequestMethod.GET)
     public String login(HttpServletRequest request, Model model) {
         Account currentAccount = (Account) request.getSession().getAttribute(FinalDefine.CURRENT_ACCOUNT);
         model.addAttribute(FinalDefine.CURRENT_ACCOUNT, currentAccount);
-
         if (currentAccount == null) {
             return "/manage/manage-login";
         } else {
@@ -55,7 +65,6 @@ public class ManageController {
                               Model model) {
         Account currentAccount = (Account) request.getSession().getAttribute(FinalDefine.CURRENT_ACCOUNT);
         //TODO::处理
-        //currentAccount = accountService.getAccountByUsername("admin");
         model.addAttribute(FinalDefine.CURRENT_ACCOUNT, currentAccount);
         if (currentAccount == null || currentAccount.getLevel() < 1) {
             //return "redirect:/";
@@ -68,6 +77,50 @@ public class ManageController {
             return "/manage/manage-contestBoard";
         }
     }
+
+    @RequestMapping(value="/contest/{contestId}/problems", method= RequestMethod.GET)
+    public String contestProblemList(HttpServletRequest request,
+                                     @PathVariable("contestId") Integer contestId, Model model) {
+        Account currentAccount = (Account) request.getSession().getAttribute(FinalDefine.CURRENT_ACCOUNT);
+        //TODO::处理
+        //currentAccount = accountService.getAccountByUsername("admin");
+        model.addAttribute(FinalDefine.CURRENT_ACCOUNT, currentAccount);
+        if (currentAccount == null || currentAccount.getLevel() < 1) {
+            //return "redirect:/";
+            return "/error/404";
+        } else {
+            Map<String, Object> data = new HashMap<>();
+            List<Question_Contest> byContestId = question_contentService.getByContestId(contestId);
+            List<Question> questions = questionService.getQuestionByIds(byContestId);
+            Contest contest = contestService.getContestById(contestId);
+            data.put("questionsSize", questions.size());
+            data.put("questions", questions);
+            data.put("contest", contest);
+            model.addAttribute(FinalDefine.DATA, data);
+            return "/manage/manage-editContestProblem";
+        }
+    }
+
+    @RequestMapping(value="/result/contest/list", method= RequestMethod.GET)
+    public String resultContestList(HttpServletRequest request,
+                                    @RequestParam(value = "page", defaultValue = "1") int page,
+                                    Model model) {
+        Account currentAccount = (Account) request.getSession().getAttribute(FinalDefine.CURRENT_ACCOUNT);
+        //TODO::处理
+        //currentAccount = accountService.getAccountByUsername("admin");
+        model.addAttribute(FinalDefine.CURRENT_ACCOUNT, currentAccount);
+        if (currentAccount == null || currentAccount.getLevel() < 1) {
+            //return "redirect:/";
+            return "/error/404";
+        } else {
+            Map<String, Object> data = contestService.getContests(page, FinalDefine.contestPageSize);
+            List<Subject> subjects = subjectService.getAllSubjects();
+            data.put("subjects", subjects);
+            model.addAttribute(FinalDefine.DATA, data);
+            return "/manage/manage-resultContestBoard";
+        }
+    }
+
     @RequestMapping(value="/question/list", method= RequestMethod.GET)
     public String questionList(HttpServletRequest request,
                                @RequestParam(value = "page", defaultValue = "1") int page,
@@ -78,7 +131,6 @@ public class ManageController {
         //currentAccount = accountService.getAccountByUsername("admin");
         model.addAttribute(FinalDefine.CURRENT_ACCOUNT, currentAccount);
         if (currentAccount == null || currentAccount.getLevel() < 1) {
-            //return "redirect:/";
             return "/error/404";
         } else {
             Map<String, Object> data = questionService.getQuestionsByContent(page,
@@ -95,6 +147,92 @@ public class ManageController {
             data.put("content", content);
             model.addAttribute("data", data);
             return "/manage/manage-questionBoard";
+        }
+    }
+
+    @RequestMapping(value="/subject/list", method= RequestMethod.GET)
+    public String subjectList(HttpServletRequest request,
+                              @RequestParam(value = "page", defaultValue = "1") int page,
+                              Model model) {
+        Account currentAccount = (Account) request.getSession().getAttribute(FinalDefine.CURRENT_ACCOUNT);
+        model.addAttribute(FinalDefine.CURRENT_ACCOUNT, currentAccount);
+        if (currentAccount == null || currentAccount.getLevel() < 1) {
+            return "/error/404";
+        } else {
+            Map<String, Object> data = subjectService.getSubjects(page, FinalDefine.subjectPageSize);
+            model.addAttribute(FinalDefine.DATA, data);
+            return "/manage/manage-subjectBoard";
+        }
+    }
+
+    @RequestMapping(value="/account/list", method= RequestMethod.GET)
+    public String accountList(HttpServletRequest request,
+                              @RequestParam(value = "page", defaultValue = "1") int page,
+                              Model model) {
+        Account currentAccount = (Account) request.getSession().getAttribute(FinalDefine.CURRENT_ACCOUNT);
+        //TODO::处理
+        //currentAccount = accountService.getAccountByUsername("admin");
+        model.addAttribute(FinalDefine.CURRENT_ACCOUNT, currentAccount);
+        if (currentAccount == null || currentAccount.getLevel() < 1) {
+            //return "redirect:/";
+            return "/error/404";
+        } else {
+            Map<String, Object> data = accountService.getAccounts(page, FinalDefine.accountPageSize);
+            model.addAttribute(FinalDefine.DATA, data);
+            return "/manage/manage-accountList";
+        }
+    }
+
+    @RequestMapping(value="/post/list", method= RequestMethod.GET)
+    public String postList(HttpServletRequest request,
+                           @RequestParam(value = "page", defaultValue = "1") int page,
+                           Model model) {
+        Account currentAccount = (Account) request.getSession().getAttribute(FinalDefine.CURRENT_ACCOUNT);
+        //TODO::处理
+        //currentAccount = accountService.getAccountByUsername("admin");
+        model.addAttribute(FinalDefine.CURRENT_ACCOUNT, currentAccount);
+        if (currentAccount == null || currentAccount.getLevel() < 1) {
+            //return "redirect:/";
+            return "/error/404";
+        } else {
+            Map<String, Object> data = postService.getPosts(page, FinalDefine.postPageSize);
+            List<Post> posts = (List<Post>) data.get("posts");
+            List<Account> authors = accountService.getAllAccount();
+            Map<Integer, Account> id2author = authors.stream().
+                    collect(Collectors.toMap(Account::getId, account -> account));
+            for (Post post : posts) {
+                post.setAuthor(id2author.get(post.getAuthorId()));
+            }
+            model.addAttribute(FinalDefine.DATA, data);
+            return "/manage/manage-postBoard";
+        }
+    }
+
+    /**
+     * 评论管理
+     */
+    @RequestMapping(value="/comment/list", method= RequestMethod.GET)
+    public String commentList(HttpServletRequest request,
+                              @RequestParam(value = "page", defaultValue = "1") int page,
+                              Model model) {
+        Account currentAccount = (Account) request.getSession().getAttribute(FinalDefine.CURRENT_ACCOUNT);
+        //TODO::处理
+        //currentAccount = accountService.getAccountByUsername("admin");
+        model.addAttribute(FinalDefine.CURRENT_ACCOUNT, currentAccount);
+        if (currentAccount == null || currentAccount.getLevel() < 1) {
+            //return "redirect:/";
+            return "/error/404";
+        } else {
+            Map<String, Object> data = commenService.getComments(page, FinalDefine.commentPageSize);
+            List<Comment> comments = (List<Comment>) data.get("comments");
+            List<Account> users = accountService.getAllAccount();
+            Map<Integer, Account> id2user = users.stream().
+                    collect(Collectors.toMap(Account::getId, account -> account));
+            for (Comment comment : comments) {
+                comment.setUser(id2user.get(comment.getUserId()));
+            }
+            model.addAttribute(FinalDefine.DATA, data);
+            return "/manage/manage-commentBoard";
         }
     }
 }

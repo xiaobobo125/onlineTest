@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bolife.online.mapper.Quesetion_ContestMapper" >
+    <resultMap id="BaseResultMap" type="com.bolife.online.entity.Question_Contest" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="contest_id" property="contestId" jdbcType="INTEGER" />
+        <result column="question_id" property="questionId" jdbcType="INTEGER" />
+    </resultMap>
+    <insert id="insert">
+        INSERT INTO t_contest_problem (contest_id,question_id) VALUES (#{contestId},#{questionId})
+    </insert>
+    <select id="getByContestId" resultMap="BaseResultMap">
+        SELECT * FROM t_contest_problem WHERE contest_id = #{contestId}
+    </select>
+    <delete id="deleteQuestion" parameterType="int">
+        DELETE FROM t_contest_problem
+        where question_id = #{questionId}
+    </delete>
+</mapper>

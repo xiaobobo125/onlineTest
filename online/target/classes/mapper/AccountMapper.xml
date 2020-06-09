@@ -22,6 +22,12 @@
         SELECT * FROM t_account
     </select>
 
+    <select id="getCount" resultType="int">
+        SELECT
+        COUNT(*)
+        FROM t_account
+    </select>
+
     <select id="getAccountByUsername" resultMap="BaseResultMap">
         SELECT * FROM t_account WHERE username = #{username}
     </select>

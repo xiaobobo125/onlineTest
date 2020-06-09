@@ -1,25 +1,24 @@
 package com.bolife.online.controller;
 
+import com.bolife.online.dto.AjaxResult;
 import com.bolife.online.entity.Account;
 import com.bolife.online.entity.Contest;
 import com.bolife.online.entity.Grade;
 import com.bolife.online.entity.Question;
+import com.bolife.online.exception.QexzWebError;
 import com.bolife.online.service.ContestService;
 import com.bolife.online.service.GraderService;
 import com.bolife.online.service.QuestionService;
+import com.bolife.online.service.Question_ContentService;
 import com.bolife.online.util.FinalDefine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @Auther: Mr.BoBo
@@ -37,6 +36,9 @@ public class ContestController extends BaseController {
 
     @Autowired
     private GraderService graderService;
+
+    @Autowired
+    private Question_ContentService question_contentService;
 
     @RequestMapping(value = "/{contestId}",method = RequestMethod.GET)
     public String goContestDetail(HttpServletRequest request,
@@ -65,5 +67,56 @@ public class ContestController extends BaseController {
         data.put("questions", questionByContestId);
         model.addAttribute(FinalDefine.DATA, data);
         return "/contest/detail";
+    }
+
+    @RequestMapping(value = "api/randomContest",method = RequestMethod.POST)
+    @ResponseBody
+    public AjaxResult randomContest(HttpServletRequest request){
+        Integer type = 0;
+        Integer soloSel = Integer.valueOf(request.getParameter("soloSel"));
+        Integer manySel = Integer.valueOf(request.getParameter("manySel"));
+        Integer queAns = Integer.valueOf(request.getParameter("queAns"));
+        Integer program = Integer.valueOf(request.getParameter("program"));
+        Integer contestId = Integer.valueOf(request.getParameter("contestId"));
+        List<Question> allQuestion = questionService.getAllQuestion();
+        Map<Integer,List<Question>> queCount = new HashMap<>();
+        for (Question question : allQuestion) {
+            if(!queCount.containsKey(question.getQuestionType())){
+                queCount.put(question.getQuestionType(),new ArrayList<>());
+            }else{
+                List<Question> questions = queCount.get(question.getQuestionType());
+                questions.add(question);
+                queCount.put(question.getQuestionType(),questions);
+            }
+        }
+        for (int i = 0; i < 4;i++){
+            switch (i){
+                case 0:
+                    type = contestRandomQuestions(soloSel, queCount.get(i), contestId,i);
+                    if (type == 0){
+                        return AjaxResult.fixedError(QexzWebError.QUESTION_COUNT);
+                    }
+                    break;
+                case 1:
+                    type = contestRandomQuestions(manySel, queCount.get(i), contestId,i);
+                    if (type == 0){
+                        return AjaxResult.fixedError(QexzWebError.QUESTION_COUNT);
+                    }
+                    break;
+                case 2:
+                    type = contestRandomQuestions(queAns, queCount.get(i), contestId,i);
+                    if (type == 0){
+                        return AjaxResult.fixedError(QexzWebError.QUESTION_COUNT);
+                    }
+                    break;
+                case 3:
+                    type = contestRandomQuestions(program, queCount.get(i), contestId,i);
+                    if (type == 0){
+                        return AjaxResult.fixedError(QexzWebError.QUESTION_COUNT);
+                    }
+                    break;
+            }
+        }
+        return new AjaxResult().setData(type);
     }
 }

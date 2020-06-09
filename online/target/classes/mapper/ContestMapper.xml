@@ -27,4 +27,14 @@
     <select id="getContestById" resultMap="BaseResultMap">
         SELECT * FROM t_contest WHERE id = #{contestId}
     </select>
+
+    <update id="updateContestById" parameterType="com.bolife.online.entity.Contest">
+        UPDATE t_contest
+        SET
+        title = #{contest.title}, total_score = #{contest.totalScore},
+        subject_id = #{contest.subjectId}, start_time = #{contest.startTime},
+        end_time = #{contest.endTime}, state = #{contest.state}
+        WHERE
+        id = #{contest.id}
+    </update>
 </mapper>

@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>GDUFE在线考试系统控制台-考试管理-查看试题</title>
+    <title>WK在线考试系统控制台-考试管理-查看试题</title>
     <link rel="stylesheet" th:href="@{https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css}" />
     <link th:href="@{https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css}" rel="stylesheet" />
     <link th:href="@{/css/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css}" rel="stylesheet" />
@@ -27,7 +27,7 @@
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#"><img style="width: 32px;height: 32px;" th:src="@{/img/manage-logo.png}" /></a>
-            <a class="navbar-brand" href="#">GDUFE在线考试系统控制台</a>
+            <a class="navbar-brand" href="#">WK在线考试系统控制台</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -68,7 +68,7 @@
                 <div class="col-md-10">
                 </div>
                 <div class="col-md-2">
-                    <button type="button" class="btn btn-success" id="addQuestionBtn"><i class="fa fa-plus"></i>添加题目</button>
+                    <button type="button" class="btn btn-success" id="addQuestionBtn"><i class="fa fa-plus"></i>随机生成试题</button>
                 </div>
             </div>
             <div class="table-responsive">
@@ -151,107 +151,141 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">新增题目</h4>
+                <h4 class="modal-title" id="myModalLabel">请选择题目个数</h4>
             </div>
             <div class="modal-body">
+                <div class="form-horizontal">
                 <form class="form-horizontal" role="form" onsubmit="return false;">
-
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">题目标题</label>
-                        <div class="col-sm-8">
-                            <input id="questionTitle" type="text" class="form-control" placeholder="" />
+                    <!--<div class="form-group">-->
+                        <!--<label class="col-sm-2 control-label">查询题目</label>-->
+                        <!--<div class="col-sm-8">-->
+                            <!--<input type="text" class="form-control center" id="content" placeholder="请输入题目内容进行搜索" style="width: 80%;"/>-->
+                        <!--</div>-->
+                        <!--<button data-bb-handler="confirm" type="button" id="searchProblemAction" class="btn btn-success radius">-->
+                            <!--<span><i class="icon-ok"></i></span> 查询-->
+                        <!--</button>-->
+                    <!--</div>-->
+                    <!--<div id="show-hide" style="display: none;">-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="col-sm-2 control-label">题目标题</label>-->
+                            <!--<div class="col-sm-8">-->
+                                <!--<input id="questionTitle" type="text" class="form-control" placeholder="" />-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="col-sm-2 control-label">题目内容</label>-->
+                            <!--<div class="col-sm-8">-->
+                                <!--<textarea  id="questionContent" class="form-control" rows="8"></textarea>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">单选</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" id="soloSel">
+                                    <option th:each="i: ${#numbers.sequence(0,50)}" th:text="${i}" th:value="${i}">${i}</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">题目内容</label>
-                        <div class="col-sm-8">
-                            <textarea  id="questionContent" class="form-control" rows="8"></textarea>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">多选</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" id="manySel">
+                                    <option th:each="i: ${#numbers.sequence(0,50)}" th:text="${i}" th:value="${i}">${i}</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">题目类型</label>
-                        <div class="col-sm-8">
-                            <select class="form-control" id="questionType">
-                                <option th:value="0">单选</option>
-                                <option th:value="1">多选</option>
-                                <option th:value="2">问答</option>
-                                <option th:value="3">编程</option>
-                            </select>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">问答</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" id="queAns">
+                                    <option th:each="i: ${#numbers.sequence(0,50)}" th:text="${i}" th:value="${i}">${i}</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">A选项</label>
-                        <div class="col-sm-8">
-                            <input id="optionA" type="text" class="form-control" placeholder="" />
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">编程</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" id="program">
+                                    <option th:each="i: ${#numbers.sequence(0,50)}" th:text="${i}" th:value="${i}">${i}</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">B选项</label>
-                        <div class="col-sm-8">
-                            <input id="optionB" type="text" class="form-control" placeholder="" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">C选项</label>
-                        <div class="col-sm-8">
-                            <input id="optionC" type="text" class="form-control" placeholder="" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">D选项</label>
-                        <div class="col-sm-8">
-                            <input id="optionD" type="text" class="form-control" placeholder="" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">题目答案</label>
-                        <div class="col-sm-8">
-                            <textarea  id="questionAnswer" class="form-control" rows="8"></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">答案解析</label>
-                        <div class="col-sm-8">
-                            <textarea  id="questionParse" class="form-control" rows="8"></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">题目难度</label>
-                        <div class="col-sm-8">
-                            <select class="form-control" id="questionDifficulty">
-                                <option th:value="1">
-                                    一星难度
-                                </option>
-                                <option th:value="2">
-                                    二星难度
-                                </option>
-                                <option th:value="3">
-                                    三星难度
-                                </option>
-                                <option th:value="4">
-                                    四星难度
-                                </option>
-                                <option th:value="5">
-                                    五星难度
-                                </option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">题目分值</label>
-                        <div class="col-sm-8">
-                            <input id="questionScore" type="text" class="form-control" placeholder="" />
-                        </div>
-                    </div>
+                        <!--<div class="form-group">-->
+                            <!--<label class="col-sm-2 control-label">A选项</label>-->
+                            <!--<div class="col-sm-8">-->
+                                <!--<input id="optionA" type="text" class="form-control" placeholder="" />-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="col-sm-2 control-label">B选项</label>-->
+                            <!--<div class="col-sm-8">-->
+                                <!--<input id="optionB" type="text" class="form-control" placeholder="" />-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="col-sm-2 control-label">C选项</label>-->
+                            <!--<div class="col-sm-8">-->
+                                <!--<input id="optionC" type="text" class="form-control" placeholder="" />-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="col-sm-2 control-label">D选项</label>-->
+                            <!--<div class="col-sm-8">-->
+                                <!--<input id="optionD" type="text" class="form-control" placeholder="" />-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="col-sm-2 control-label">题目答案</label>-->
+                            <!--<div class="col-sm-8">-->
+                                <!--<textarea  id="questionAnswer" class="form-control" rows="8"></textarea>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="col-sm-2 control-label">答案解析</label>-->
+                            <!--<div class="col-sm-8">-->
+                                <!--<textarea  id="questionParse" class="form-control" rows="8"></textarea>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="col-sm-2 control-label">题目难度</label>-->
+                            <!--<div class="col-sm-8">-->
+                                <!--<select class="form-control" id="questionDifficulty">-->
+                                    <!--<option th:value="1">-->
+                                        <!--一星难度-->
+                                    <!--</option>-->
+                                    <!--<option th:value="2">-->
+                                        <!--二星难度-->
+                                    <!--</option>-->
+                                    <!--<option th:value="3">-->
+                                        <!--三星难度-->
+                                    <!--</option>-->
+                                    <!--<option th:value="4">-->
+                                        <!--四星难度-->
+                                    <!--</option>-->
+                                    <!--<option th:value="5">-->
+                                        <!--五星难度-->
+                                    <!--</option>-->
+                                <!--</select>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label class="col-sm-2 control-label">题目分值</label>-->
+                            <!--<div class="col-sm-8">-->
+                                <!--<input id="questionScore" type="text" class="form-control" placeholder="" />-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
                 </form>
             </div>
             <div class="modal-footer">
-                <button data-bb-handler="confirm" type="button" id="confirmAddQuestionBtn" class="btn btn-success radius">
-                    <span><i class="icon-ok"></i></span> 确定
-                </button>
-                <button data-bb-handler="cancel" type="button" id="cancelAddQuestionBtn" class="btn btn-danger radius">取消</button>
+            <button data-bb-handler="confirm" type="button" id="confirmAddQuestionBtn" class="btn btn-success radius">
+            <span><i class="icon-ok"></i></span> 确定
+            </button>
+            <button data-bb-handler="cancel" type="button" id="cancelAddQuestionBtn" class="btn btn-danger radius">取消</button>
             </div>
         </div>
+    </div>
     </div>
 </div>
 

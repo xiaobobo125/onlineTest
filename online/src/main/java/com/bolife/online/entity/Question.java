@@ -195,4 +195,54 @@ public class Question {
                 ", subjectName='" + subjectName + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Question question = (Question) o;
+
+        if (id != question.id) return false;
+        if (questionType != question.questionType) return false;
+        if (subjectId != question.subjectId) return false;
+        if (contestId != question.contestId) return false;
+        if (score != question.score) return false;
+        if (difficulty != question.difficulty) return false;
+        if (state != question.state) return false;
+        if (title != null ? !title.equals(question.title) : question.title != null) return false;
+        if (content != null ? !content.equals(question.content) : question.content != null) return false;
+        if (optionA != null ? !optionA.equals(question.optionA) : question.optionA != null) return false;
+        if (optionB != null ? !optionB.equals(question.optionB) : question.optionB != null) return false;
+        if (optionC != null ? !optionC.equals(question.optionC) : question.optionC != null) return false;
+        if (optionD != null ? !optionD.equals(question.optionD) : question.optionD != null) return false;
+        if (answer != null ? !answer.equals(question.answer) : question.answer != null) return false;
+        if (parse != null ? !parse.equals(question.parse) : question.parse != null) return false;
+        if (createTime != null ? !createTime.equals(question.createTime) : question.createTime != null) return false;
+        if (updateTime != null ? !updateTime.equals(question.updateTime) : question.updateTime != null) return false;
+        return subjectName != null ? subjectName.equals(question.subjectName) : question.subjectName == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + (title != null ? title.hashCode() : 0);
+        result = 31 * result + (content != null ? content.hashCode() : 0);
+        result = 31 * result + questionType;
+        result = 31 * result + (optionA != null ? optionA.hashCode() : 0);
+        result = 31 * result + (optionB != null ? optionB.hashCode() : 0);
+        result = 31 * result + (optionC != null ? optionC.hashCode() : 0);
+        result = 31 * result + (optionD != null ? optionD.hashCode() : 0);
+        result = 31 * result + (answer != null ? answer.hashCode() : 0);
+        result = 31 * result + (parse != null ? parse.hashCode() : 0);
+        result = 31 * result + subjectId;
+        result = 31 * result + contestId;
+        result = 31 * result + score;
+        result = 31 * result + difficulty;
+        result = 31 * result + (createTime != null ? createTime.hashCode() : 0);
+        result = 31 * result + (updateTime != null ? updateTime.hashCode() : 0);
+        result = 31 * result + state;
+        result = 31 * result + (subjectName != null ? subjectName.hashCode() : 0);
+        return result;
+    }
 }

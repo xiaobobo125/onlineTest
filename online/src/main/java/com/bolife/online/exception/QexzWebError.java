@@ -1,5 +1,6 @@
 package com.bolife.online.exception;
 
+
 public enum QexzWebError {
 
     COMMON("服务器端出错", 3000),
@@ -9,7 +10,8 @@ public enum QexzWebError {
     NOT_EQUALS_CONFIRM_PASSWORD("确认密码不一致", 3004),
     UPLOAD_FILE_IMAGE_ANALYZE_ERROR("服务端解析文件出错", 3005),
     UPLOAD_FILE_IMAGE_NOT_QUALIFIED("图片不合法",3006),
-    AREADY_EXIST_USERNAME("该账号已经存在了", 3007);
+    AREADY_EXIST_USERNAME("该账号已经存在了", 3007),
+    QUESTION_COUNT("题目数量不足，请修改个数或者添加题目后访问", 3008);
 
     public final String errMsg;
     public final int code;

@@ -328,5 +328,4 @@ var manageQuestionBoardPage = {
         window.location.href = app.URL.manageQuestionUrl() + '?page=1&content='+content;
     },
 
-
 };

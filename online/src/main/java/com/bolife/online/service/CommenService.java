@@ -3,6 +3,7 @@ package com.bolife.online.service;
 import com.bolife.online.entity.Comment;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Auther: Mr.BoBo
@@ -13,4 +14,6 @@ public interface CommenService {
     public List<Comment> getCommentByPostId(int postId);
 
     Integer addComment(Comment comment);
+
+    Map<String,Object> getComments(int page, int commentPageSize);
 }

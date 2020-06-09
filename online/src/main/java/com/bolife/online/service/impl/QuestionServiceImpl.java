@@ -1,6 +1,9 @@
 package com.bolife.online.service.impl;
 
+import com.bolife.online.entity.Contest;
 import com.bolife.online.entity.Question;
+import com.bolife.online.entity.Question_Contest;
+import com.bolife.online.mapper.ContestMapper;
 import com.bolife.online.mapper.QuestionMapper;
 import com.bolife.online.service.QuestionService;
 import com.github.pagehelper.PageHelper;
@@ -21,6 +24,9 @@ import java.util.Map;
 public class QuestionServiceImpl implements QuestionService {
     @Autowired
     private QuestionMapper questionMapper;
+
+    @Autowired
+    private ContestMapper contestMapper;
     @Override
     public List<Question> getQuestionByContestId(Integer contestId) {
         return questionMapper.getQuestionByContestId(contestId);
@@ -102,5 +108,43 @@ public class QuestionServiceImpl implements QuestionService {
         data.put("questionsSize", questions.size());
         data.put("questions", questions);
         return data;
+    }
+
+    @Override
+    public int addQuestion(Question question) {
+        if (question.getContestId() == 0) {
+            question.setState(1);
+        } else {
+            question.setState(0);
+            Contest contest = contestMapper.getContestById(question.getContestId());
+            contest.setTotalScore(contest.getTotalScore()+question.getScore());
+            contestMapper.updateContestById(contest);
+        }
+        return questionMapper.insertQuestion(question);
+    }
+
+    @Override
+    public boolean deleteQuestion(int id) {
+        return questionMapper.deleteQuestion(id) > 0;
+    }
+
+    @Override
+    public Integer getQuestionCountByQuestionType(int questionType) {
+        return questionMapper.getQuestionCountByQuestionType(questionType);
+    }
+
+    @Override
+    public List<Question> getAllQuestion() {
+        return questionMapper.getAllQuestion();
+    }
+
+    @Override
+    public List<Question> getQuestionByIds(List<Question_Contest> byContestId) {
+        List<Question> questions = new ArrayList<>();
+        for (Question_Contest question_contest : byContestId) {
+            Question questionById = questionMapper.getQuestionById(question_contest.getQuestionId());
+            questions.add(questionById);
+        }
+        return questions;
     }
 }

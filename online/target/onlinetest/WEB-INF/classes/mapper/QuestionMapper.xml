@@ -40,6 +40,12 @@
             AND difficulty = #{difficulty}
         </if>
     </select>
+    <select id="getQuestionCountByQuestionType" resultType="integer">
+        SELECT
+        COUNT(*)
+        FROM t_question
+        WHERE question_type = #{questionType}
+    </select>
     <select id="getQuestionByPCD" resultMap="BaseResultMap">
         SELECT
         *
@@ -73,5 +79,22 @@
         <if test="content != null and content != ''">
             AND content LIKE CONCAT(CONCAT('%', #{content}), '%')
         </if>
+    </select>
+    <delete id="deleteQuestion" parameterType="int">
+        DELETE FROM t_question
+        where id = #{id}
+    </delete>
+    <insert id="insertQuestion" parameterType="com.bolife.online.entity.Question" >
+        insert into t_question
+        (title, content, question_type, option_a, option_b, option_c,
+        option_d, answer, parse, subject_id, contest_id, score, difficulty,
+        state)
+        values (#{question.title}, #{question.content}, #{question.questionType},
+        #{question.optionA}, #{question.optionB}, #{question.optionC}, #{question.optionD},
+        #{question.answer}, #{question.parse}, #{question.subjectId}, #{question.contestId},
+        #{question.score}, #{question.difficulty}, #{question.state})
+    </insert>
+    <select id="getAllQuestion" resultMap="BaseResultMap">
+        SELECT * FROM t_question
     </select>
 </mapper>

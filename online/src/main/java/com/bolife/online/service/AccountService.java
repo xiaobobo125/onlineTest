@@ -3,6 +3,7 @@ package com.bolife.online.service;
 import com.bolife.online.entity.Account;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Auther: Mr.BoBo
@@ -17,4 +18,6 @@ public interface AccountService {
     Account getAccountById(int authorId);
 
     boolean updateAccount(Account currentAccount);
+
+    Map<String,Object> getAccounts(int page, int accountPageSize);
 }

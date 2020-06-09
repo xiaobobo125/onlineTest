@@ -26,4 +26,6 @@ public interface ContestMapper {
     public List<Contest> getContests();
 
     Contest getContestById(@Param("contestId") int contestId);
+
+    void updateContestById(@Param("contest") Contest contest);
 }
