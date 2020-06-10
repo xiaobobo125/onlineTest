@@ -259,7 +259,7 @@ var manageContestBoardPage = {
     deleteContestAction: function (index) {
         $.ajax({
             url : app.URL.deleteContestUrl()+index,
-            type : "DELETE",
+            type : "GET",
             dataType: "json",
             contentType : "application/json;charset=UTF-8",
             success:function(result) {

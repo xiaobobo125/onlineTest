@@ -68,6 +68,7 @@
                 <div class="col-md-4">
                     <button type="button" class="btn btn-success" id="queryQuestionBtn"><i class="glyphicon glyphicon-search"></i>查询</button>
                     <button type="button" class="btn btn-success" id="addQuestionBtn"><i class="fa fa-plus"></i>添加题目</button>
+                    <button type="button" class="btn btn-success" id="addManyQuestionBtn"><i class="fa fa-plus"></i>批量导入</button>
                 </div>
             </div>
             <div class="table-responsive">
@@ -266,6 +267,44 @@
                     <span><i class="icon-ok"></i></span> 确定
                 </button>
                 <button data-bb-handler="cancel" type="button" id="cancelAddQuestionBtn" class="btn btn-danger radius">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--批量导入-->
+<div id="addManyImport" class="bootbox modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog form-horizontal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myManyModalLabel">批量导入(仅支持*.xls或者*.xlsx文件)</h4>
+            </div>
+            <div class="modal-body">
+                    <div class="form-group" id="updateErrorMessage">
+                    </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">所属课程</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" id="insertSubjectId">
+                            <option th:each="item,itemStats : ${data['subjects']}"
+                                    th:value="${item.id}" th:text="${item.name}">
+
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">选择文件</label>
+                    <div class="col-sm-8">
+                        <input type="file" name="myfile" id="myfile"/>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button data-bb-handler="confirm" type="button" id="confirmAddManyQuestionBtn" class="btn btn-success radius">
+                    <span><i class="icon-ok"></i></span> 确定
+                </button>
+                <button data-bb-handler="cancel" type="button" id="cancelAddManyQuestionBtn" class="btn btn-danger radius">取消</button>
             </div>
         </div>
     </div>

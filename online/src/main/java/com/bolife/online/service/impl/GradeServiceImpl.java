@@ -61,4 +61,14 @@ public class GradeServiceImpl implements GraderService {
         data.put("grades", grades);
         return data;
     }
+
+    @Override
+    public List<Grade> getGradesByContestId(int contestId) {
+        return gradeMapper.getGradesByContestId(contestId);
+    }
+
+    @Override
+    public boolean updateGrade(Grade grade) {
+        return gradeMapper.updateGrade(grade) > 0;
+    }
 }

@@ -25,5 +25,23 @@
         SELECT * FROM t_subject
         WHERE id = #{id}
     </select>
+    <insert id="insertSubject" parameterType="com.bolife.online.entity.Subject" >
+        insert into t_subject
+        (name, question_num, img_url,update_time)
+        values (#{subject.name}, #{subject.questionNum}, #{subject.imgUrl},#{subject.updateTime})
+    </insert>
+
+    <update id="updateSubject" parameterType="com.bolife.online.entity.Subject">
+        UPDATE t_subject
+        SET
+        name = #{subject.name}, question_num = #{subject.questionNum},
+        img_url = #{subject.imgUrl}
+        WHERE
+        id = #{subject.id}
+    </update>
+    <delete id="deleteSubjectById" parameterType="int">
+        DELETE FROM t_subject
+        where id = #{id}
+    </delete>
 
 </mapper>

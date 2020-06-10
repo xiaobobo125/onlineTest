@@ -21,12 +21,20 @@
     <select id="getContests" resultMap="BaseResultMap">
         SELECT
         <include refid="Base_Column_List"/>
-        FROM t_contest;
+        FROM t_contest
+        ORDER BY state,start_time DESC
     </select>
 
     <select id="getContestById" resultMap="BaseResultMap">
         SELECT * FROM t_contest WHERE id = #{contestId}
     </select>
+
+    <insert id="insertContest" parameterType="com.bolife.online.entity.Contest" >
+        insert into t_contest
+        (title, total_score, subject_id, start_time, end_time, state)
+        values (#{contest.title}, #{contest.totalScore}, #{contest.subjectId},
+        #{contest.startTime}, #{contest.endTime}, #{contest.state})
+    </insert>
 
     <update id="updateContestById" parameterType="com.bolife.online.entity.Contest">
         UPDATE t_contest
@@ -37,4 +45,16 @@
         WHERE
         id = #{contest.id}
     </update>
+    <update id="updateContestStateById" parameterType="com.bolife.online.entity.Contest">
+        UPDATE t_contest
+        SET
+        state = #{contestState}
+        WHERE
+        id = #{id}
+    </update>
+
+    <delete id="deleteContest" parameterType="int">
+        DELETE FROM t_contest
+        where id = #{id}
+    </delete>
 </mapper>

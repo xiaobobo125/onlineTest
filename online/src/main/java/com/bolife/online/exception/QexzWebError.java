@@ -11,7 +11,7 @@ public enum QexzWebError {
     UPLOAD_FILE_IMAGE_ANALYZE_ERROR("服务端解析文件出错", 3005),
     UPLOAD_FILE_IMAGE_NOT_QUALIFIED("图片不合法",3006),
     AREADY_EXIST_USERNAME("该账号已经存在了", 3007),
-    QUESTION_COUNT("题目数量不足，请修改个数或者添加题目后访问", 3008);
+    QUESTION_COUNT("题目数量不足，请修改题目个数或者添加题目后访问", 3008);
 
     public final String errMsg;
     public final int code;

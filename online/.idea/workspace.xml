@@ -29,74 +29,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ManageController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/controller/ManageController.java">
+      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/user/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1478">
-              <caret line="93" column="63" lean-forward="false" selection-start-line="93" selection-start-column="63" selection-end-line="93" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ContestController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/controller/ContestController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1802">
-              <caret line="122" column="0" lean-forward="true" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+            <state relative-caret-position="-725">
+              <caret line="101" column="82" lean-forward="false" selection-start-line="101" selection-start-column="65" selection-end-line="101" selection-end-column="82" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Quesetion_ContestMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/Quesetion_ContestMapper.xml">
+      <file leaf-file-name="manage-questionBoard.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-questionBoard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-              <folding>
-                <marker date="1591701776361" expanded="true" signature="575:665" ph="INSERT INTO t_contest_problem... " />
-                <marker date="1591701776361" expanded="true" signature="747:810" ph="SELECT * FRO... t_contest_problem" />
-                <marker date="1591701776361" expanded="true" signature="886:957" ph="DELETE FROM " />
-              </folding>
+            <state relative-caret-position="178">
+              <caret line="374" column="45" lean-forward="false" selection-start-line="374" selection-start-column="45" selection-end-line="374" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QuestionController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="profile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/js/user/profile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-579">
+              <caret line="125" column="54" lean-forward="true" selection-start-line="125" selection-start-column="54" selection-end-line="125" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QuestionController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/controller/QuestionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="45" column="56" lean-forward="false" selection-start-line="45" selection-start-column="56" selection-end-line="45" selection-end-column="56" />
+            <state relative-caret-position="207">
+              <caret line="93" column="44" lean-forward="false" selection-start-line="93" selection-start-column="44" selection-end-line="93" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Question_ContentService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/service/Question_ContentService.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Question_ContentServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/service/impl/Question_ContentServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1">
-              <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1125#1126#0" expanded="true" />
-                <element signature="e#1190#1191#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1034">
+              <caret line="280" column="0" lean-forward="false" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -104,38 +82,52 @@
       <file leaf-file-name="QuestionServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/service/impl/QuestionServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="144" column="99" lean-forward="false" selection-start-line="144" selection-start-column="99" selection-end-line="144" selection-end-column="99" />
+            <state relative-caret-position="222">
+              <caret line="171" column="34" lean-forward="false" selection-start-line="171" selection-start-column="34" selection-end-line="171" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/controller/BaseController.java">
+      <file leaf-file-name="ExcelUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/util/ExcelUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="396">
+              <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2131#2139#0" expanded="true" />
+                <element signature="e#9135#9144#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccountController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/controller/AccountController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Question.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/entity/Question.java">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-518">
-              <caret line="199" column="37" lean-forward="false" selection-start-line="199" selection-start-column="37" selection-end-line="199" selection-end-column="37" />
+            <state relative-caret-position="194">
+              <caret line="71" column="41" lean-forward="false" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Question_Contest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/entity/Question_Contest.java">
+      <file leaf-file-name="QuestionService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/service/QuestionService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-257">
-              <caret line="69" column="37" lean-forward="false" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
+            <state relative-caret-position="425">
+              <caret line="39" column="59" lean-forward="false" selection-start-line="39" selection-start-column="59" selection-end-line="39" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -147,8 +139,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -160,6 +152,8 @@
       <find>qexz.dao</find>
       <find>postDiscussSubmitButton</find>
       <find>QexzConst</find>
+      <find>deleteQuestionAction</find>
+      <find>dependencies</find>
     </findStrings>
     <replaceStrings>
       <replace>com.bolife.online</replace>
@@ -175,57 +169,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-editContestProblem.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/service/SubjectService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/service/impl/SubjectServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/mapper/SubjectMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-subjectBoard.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/controller/SubjectController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/controller/ContestController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/service/ContestService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/service/impl/ContestServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/mapper/ContestMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/controller/HomeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/controller/GradeController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-resultStudentBoard.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/service/AccountService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/mapper/AccountMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/controller/AccountController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-app.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/AccountMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/controller/PostController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/service/PostService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-accountList.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/service/impl/PostServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/mapper/PostMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/PostMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/user/myDiscussPost.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/user/password.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/user/myExam.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/assert/js/user/profile.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/controller/AccountController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/user/profile.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/util/FinalDefine.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-login.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-questionBoard.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/service/AccountService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/service/impl/AccountServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/mapper/AccountMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/AccountMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/controller/CommentController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/service/CommenService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/service/impl/CommentServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/mapper/CommentMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/public/public.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-accountList.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-commentBoard.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-postBoard.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-resultContestBoard.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-resultStudentBoard.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-subjectBoard.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-contestBoard.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-questionBoard.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/controller/ProblemController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/mapper/ContestMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/ContestMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-app.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-editContestProblem.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-postBoard.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-commentBoard.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/mapper/QuestionMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/SubjectMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/QuestionMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/exception/QexzWebError.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-editContestProblem.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/service/QuestionService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-subjectBoard.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/entity/ExcelBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/interceptor/SecurityInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/controller/ManageController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/service/Question_ContentService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/service/impl/Question_ContentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/mapper/Quesetion_ContestMapper.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/util/RedisAPI.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-mybatis.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/service/impl/AccountServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/ContestMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/test/FileUploadTest.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assert/js/app.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-questionBoard.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/util/ExcelUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/service/impl/QuestionServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/Quesetion_ContestMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/entity/Question_Contest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/service/QuestionService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-questionBoard.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/controller/QuestionController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/controller/BaseController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/controller/ContestController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bolife/online/entity/Question.java" />
       </list>
     </option>
   </component>
@@ -255,8 +249,9 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -310,9 +305,7 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -385,50 +378,6 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="bolife" type="462c0819:PsiDirectoryNode" />
               <item name="online" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="onlinetest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="online" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="bolife" type="462c0819:PsiDirectoryNode" />
-              <item name="online" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="onlinetest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="online" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="bolife" type="462c0819:PsiDirectoryNode" />
-              <item name="online" type="462c0819:PsiDirectoryNode" />
-              <item name="exception" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="onlinetest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="online" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="bolife" type="462c0819:PsiDirectoryNode" />
-              <item name="online" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="onlinetest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="online" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="bolife" type="462c0819:PsiDirectoryNode" />
-              <item name="online" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -452,6 +401,17 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="bolife" type="462c0819:PsiDirectoryNode" />
               <item name="online" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="onlinetest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="bolife" type="462c0819:PsiDirectoryNode" />
+              <item name="online" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -460,14 +420,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="onlinetest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="online" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="onlinetest" type="b2602c69:ProjectViewProjectNode" />
@@ -499,7 +451,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="assert" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="onlinetest" type="b2602c69:ProjectViewProjectNode" />
@@ -508,7 +460,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="assert" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="manage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -519,26 +471,7 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="assert" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="onlinetest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="online" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="assert" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="contest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="onlinetest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="online" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="assert" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="manage" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="onlinetest" type="b2602c69:ProjectViewProjectNode" />
@@ -575,17 +508,19 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -596,17 +531,17 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\226\git\onlineTest\online\src\main\java\com\bolife\online\exception" />
-      <recent name="D:\226\git\onlineTest\online\src\main\java\com\bolife\online\controller" />
-      <recent name="D:\226\git\onlineTest\online\src\main\java\com\bolife\online\entity" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\226\git\onlineTest\online\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.bolife.online.util" />
       <recent name="com.bolife.online.dto" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\226\git\onlineTest\online\src\main\java\com\bolife\online\exception" />
+      <recent name="D:\226\git\onlineTest\online\src\main\java\com\bolife\online\controller" />
+      <recent name="D:\226\git\onlineTest\online\src\main\java\com\bolife\online\entity" />
       <recent name="D:\226\git\onlineTest\online\src\main\resources" />
     </key>
   </component>
@@ -623,6 +558,31 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.tomcat8.5">
+    <configuration name="FileUploadTest.demo1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.bolife.online.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="online" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.bolife.online.test" />
+      <option name="MAIN_CLASS_NAME" value="com.bolife.online.test.FileUploadTest" />
+      <option name="METHOD_NAME" value="demo1" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -778,6 +738,15 @@
         </option>
       </method>
     </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.tomcat8.5" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.FileUploadTest.demo1" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.FileUploadTest.demo1" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -797,15 +766,47 @@
       <workItem from="1591496373085" duration="25411000" />
       <workItem from="1591582178606" duration="10934000" />
       <workItem from="1591680293474" duration="22430000" />
+      <workItem from="1591759359588" duration="27904000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="FileUploadTest_demo1 - 2020.06.10 at 17h 15m 07s.xml">
+      <configuration name="FileUploadTest.demo1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileUploadTest_demo1 - 2020.06.10 at 17h 18m 53s.xml">
+      <configuration name="FileUploadTest.demo1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileUploadTest_demo1 - 2020.06.10 at 17h 19m 36s.xml">
+      <configuration name="FileUploadTest.demo1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileUploadTest_demo1 - 2020.06.10 at 17h 21m 31s.xml">
+      <configuration name="FileUploadTest.demo1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileUploadTest_demo1 - 2020.06.10 at 17h 24m 56s.xml">
+      <configuration name="FileUploadTest.demo1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileUploadTest_demo1 - 2020.06.10 at 17h 31m 21s.xml">
+      <configuration name="FileUploadTest.demo1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileUploadTest_demo1 - 2020.06.10 at 17h 38m 16s.xml">
+      <configuration name="FileUploadTest.demo1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileUploadTest_demo1 - 2020.06.10 at 17h 39m 46s.xml">
+      <configuration name="FileUploadTest.demo1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileUploadTest_demo1 - 2020.06.10 at 17h 40m 23s.xml">
+      <configuration name="FileUploadTest.demo1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FileUploadTest_demo1 - 2020.06.10 at 18h 06m 24s.xml">
+      <configuration name="FileUploadTest.demo1" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75480000" />
+    <option name="totallyTimeSpent" value="103384000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1936" height="1056" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -825,10 +826,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293348" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293348" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45474374" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19925214" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2013889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -848,7 +849,17 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="22" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/bolife/online/controller/AccountController.java</url>
+          <line>210</line>
+          <properties class="com.bolife.online.controller.AccountController" method="uploadAvatar">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="41" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
@@ -857,177 +868,158 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/controller/PostController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="35" column="56" lean-forward="true" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/mapper/PostMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="25" column="11" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/service/CommenService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="19" column="11" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/service/impl/CommentServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
-          <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <caret line="68" column="50" lean-forward="true" selection-start-line="68" selection-start-column="50" selection-end-line="68" selection-end-column="50" />
           <folding>
-            <marker date="1591682186497" expanded="true" signature="833:939" ph="SELECT * FRO... t_comment" />
-            <marker date="1591682186497" expanded="true" signature="1007:1053" ph="SELECT COUNT... t_comment" />
-            <marker date="1591682186497" expanded="true" signature="1133:1205" ph="SELECT * FRO... t_comment" />
-            <marker date="1591682186497" expanded="true" signature="1311:1442" ph="insert into t_comment... " />
+            <element signature="e#2129#2130#0" expanded="true" />
+            <element signature="e#2191#2192#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/css/base.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/mapper/CommentMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13902">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="291">
+          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/css/home.css">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-contestBoard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-663">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="116">
+          <caret line="261" column="15" lean-forward="false" selection-start-line="261" selection-start-column="15" selection-end-line="263" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/js/home.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-postBoard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="203">
+          <caret line="79" column="23" lean-forward="false" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/css/app.css">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-commentBoard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-199">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="69" column="23" lean-forward="false" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/home.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/mapper/QuestionMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-39">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="291">
+          <caret line="44" column="31" lean-forward="false" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/entity/Account.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SubjectMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="23" column="21" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="323">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <marker date="1591772727958" expanded="true" signature="1000:1073" ph="SELECT FROM t_subject" />
+            <marker date="1591772727958" expanded="true" signature="1145:1175" ph="SELECT COUNT... t_subject" />
+            <marker date="1591772727958" expanded="true" signature="1257:1305" ph="SELECT * FRO... t_subject" />
+            <marker date="1591772727958" expanded="true" signature="1410:1579" ph="insert into t_subject... " />
+            <marker date="1591772727958" expanded="true" signature="1684:1860" ph="UPDATE t_sub... " />
+            <marker date="1591772727958" expanded="true" signature="1939:1985" ph="DELETE FROM " />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/public/public.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/QuestionMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="28" column="14" lean-forward="false" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-          <folding />
+        <state relative-caret-position="381">
+          <caret line="118" column="71" lean-forward="false" selection-start-line="118" selection-start-column="71" selection-end-line="118" selection-end-column="71" />
+          <folding>
+            <marker date="1591772750511" expanded="true" signature="1886:1942" ph="SELECT * FRO... t_question" />
+            <marker date="1591772750511" expanded="true" signature="2452:2545" ph="SELECT COUNT... t_question" />
+            <marker date="1591772750511" expanded="true" signature="3038:3077" ph="SELECT * FRO... t_question" />
+            <marker date="1591772750511" expanded="true" signature="3167:3221" ph="SELECT * FRO... t_question" />
+            <marker date="1591772750511" expanded="true" signature="3887:3934" ph="DELETE FROM " />
+            <marker date="1591772750511" expanded="true" signature="4041:4561" ph="insert into t_question... " />
+            <marker date="1591772750511" expanded="true" signature="4643:4667" ph="SELECT * FRO... t_question" />
+            <marker date="1591772750511" expanded="true" signature="4778:5324" ph="UPDATE t_que... " />
+            <marker date="1591772750511" expanded="true" signature="5407:5470" ph="SELECT COUNT... t_question" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-accountList.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/service/impl/SubjectServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="26" column="43" lean-forward="false" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-          <folding />
+        <state relative-caret-position="145">
+          <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+          <folding>
+            <element signature="e#2459#2460#0" expanded="true" />
+            <element signature="e#2517#2518#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-commentBoard.html">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-subjectBoard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="33" column="43" lean-forward="false" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-postBoard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="33" column="43" lean-forward="false" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-resultContestBoard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="29" column="47" lean-forward="false" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-resultStudentBoard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="28" column="46" lean-forward="false" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
+        <state relative-caret-position="3712">
+          <caret line="188" column="23" lean-forward="false" selection-start-line="188" selection-start-column="23" selection-end-line="188" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-subjectBoard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="33" column="43" lean-forward="false" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+        <state relative-caret-position="522">
+          <caret line="102" column="43" lean-forward="false" selection-start-line="102" selection-start-column="43" selection-end-line="102" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/controller/AccountController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/controller/ContestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4572">
-          <caret line="236" column="0" lean-forward="false" selection-start-line="236" selection-start-column="0" selection-end-line="236" selection-end-column="0" />
+        <state relative-caret-position="1035">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-contestBoard.html">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/contest/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="44" column="40" lean-forward="true" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ContestMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="30" column="74" lean-forward="false" selection-start-line="30" selection-start-column="74" selection-end-line="30" selection-end-column="74" />
-          <folding>
-            <marker date="1591688035280" expanded="true" signature="1173:1203" ph="SELECT COUNT... t_contest" />
-            <marker date="1591688035280" expanded="true" signature="1282:1355" ph="SELECT FROM t_contest" />
-            <marker date="1591688035280" expanded="true" signature="1439:1486" ph="SELECT * FRO... t_contest" />
-            <marker date="1591688035280" expanded="true" signature="1595:1877" ph="UPDATE t_con... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-contestBoard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6786">
+        <state relative-caret-position="-1914">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/mapper/ContestMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="29" column="62" lean-forward="false" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/css/manage/manage-editContestProblem.css">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/js/contest/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1035,58 +1027,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/css/manage/manage-app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2722">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/css/manage/manage-login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-837">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-questionBoard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="324" column="4" lean-forward="true" selection-start-line="324" selection-start-column="4" selection-end-line="328" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-questionBoard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="179" column="52" lean-forward="false" selection-start-line="179" selection-start-column="40" selection-end-line="179" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/controller/CommentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/js/contest/detail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7830">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="1508">
+          <caret line="55" column="15" lean-forward="true" selection-start-line="55" selection-start-column="15" selection-end-line="55" selection-end-column="73" />
           <folding>
             <marker date="1591514465034" expanded="true" signature="1306:1312" ph="&amp;nbsp;" />
             <marker date="1591514465034" expanded="true" signature="1312:1318" ph="&amp;nbsp;" />
@@ -1129,47 +1073,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/contest/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16443">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="203">
+          <caret line="61" column="143" lean-forward="false" selection-start-line="61" selection-start-column="143" selection-end-line="61" selection-end-column="143" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/controller/DiscussController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-resultContestBoard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="57" column="49" lean-forward="false" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+        <state relative-caret-position="465">
+          <caret line="103" column="22" lean-forward="true" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-editContestProblem.html">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="200" column="77" lean-forward="false" selection-start-line="200" selection-start-column="77" selection-end-line="200" selection-end-column="77" />
+        <state relative-caret-position="174">
+          <caret line="115" column="8" lean-forward="false" selection-start-line="115" selection-start-column="8" selection-end-line="115" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/exception/QexzWebError.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/controller/PostController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-login.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/user/myDiscussPost.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1177,159 +1105,305 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-app.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/entity/ExcelBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="56" column="66" lean-forward="false" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/QuestionMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2378">
-          <caret line="82" column="4" lean-forward="true" selection-start-line="82" selection-start-column="4" selection-end-line="85" selection-end-column="13" />
-          <folding>
-            <marker date="1591695366870" expanded="true" signature="1886:1942" ph="SELECT * FRO... t_question" />
-            <marker date="1591695366870" expanded="true" signature="2452:2545" ph="SELECT COUNT... t_question" />
-            <marker date="1591695366870" expanded="true" signature="3038:3077" ph="SELECT * FRO... t_question" />
-            <marker date="1591695366870" expanded="true" signature="3743:3790" ph="DELETE FROM " />
-            <marker date="1591695366870" expanded="true" signature="3897:4417" ph="insert into t_question... " />
-            <marker date="1591695366870" expanded="true" signature="4499:4523" ph="SELECT * FRO... t_question" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-editContestProblem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="206" column="39" lean-forward="true" selection-start-line="206" selection-start-column="39" selection-end-line="206" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/service/QuestionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/mapper/QuestionMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="34" column="12" lean-forward="false" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/mapper/Quesetion_ContestMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="19" column="45" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="45" />
+        <state relative-caret-position="456">
+          <caret line="19" column="37" lean-forward="false" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
+            <element signature="e#546#547#0" expanded="true" />
+            <element signature="e#594#595#0" expanded="true" />
+            <element signature="e#633#634#0" expanded="true" />
+            <element signature="e#668#669#0" expanded="true" />
+            <element signature="e#724#725#0" expanded="true" />
+            <element signature="e#772#773#0" expanded="true" />
+            <element signature="e#804#805#0" expanded="true" />
+            <element signature="e#831#832#0" expanded="true" />
+            <element signature="e#872#873#0" expanded="true" />
+            <element signature="e#904#905#0" expanded="true" />
+            <element signature="e#947#948#0" expanded="true" />
+            <element signature="e#979#980#0" expanded="true" />
+            <element signature="e#1036#1037#0" expanded="true" />
+            <element signature="e#1078#1079#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/entity/Question_Contest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/controller/CommentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-257">
-          <caret line="69" column="37" lean-forward="false" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
+        <state relative-caret-position="261">
+          <caret line="36" column="61" lean-forward="false" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/controller/ManageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1478">
-          <caret line="93" column="63" lean-forward="false" selection-start-line="93" selection-start-column="63" selection-end-line="93" selection-end-column="63" />
+        <state relative-caret-position="6235">
+          <caret line="240" column="43" lean-forward="false" selection-start-line="240" selection-start-column="43" selection-end-line="240" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/interceptor/SecurityInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-mybatis.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="50" column="11" lean-forward="false" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/util/RedisAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="48" column="13" lean-forward="false" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/service/impl/AccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="30" column="15" lean-forward="false" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
+          <folding>
+            <element signature="e#1197#1198#0" expanded="true" />
+            <element signature="e#1267#1268#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/AccountMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1073">
+          <caret line="44" column="41" lean-forward="false" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+          <folding>
+            <marker date="1591771838383" expanded="true" signature="1390:1413" ph="SELECT * FRO... t_account" />
+            <marker date="1591771838383" expanded="true" signature="1481:1527" ph="SELECT COUNT... t_account" />
+            <marker date="1591771838383" expanded="true" signature="1616:1668" ph="SELECT * FRO... t_account" />
+            <marker date="1591771838383" expanded="true" signature="1750:1788" ph="SELECT * FRO... t_account" />
+            <marker date="1591771838383" expanded="true" signature="1897:2424" ph="UPDATE t_acc... " />
+            <marker date="1591771838383" expanded="true" signature="2501:2547" ph="delete from " />
+            <marker date="1591771838383" expanded="true" signature="2602:2672" ph="update t_acc... " />
+            <marker date="1591771838383" expanded="true" signature="2778:3105" ph="insert into t_account... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1160">
+          <caret line="40" column="41" lean-forward="false" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
+          <folding>
+            <marker date="1591772274593" expanded="true" signature="833:939" ph="SELECT * FRO... t_comment" />
+            <marker date="1591772274593" expanded="true" signature="1007:1053" ph="SELECT COUNT... t_comment" />
+            <marker date="1591772274593" expanded="true" signature="1133:1205" ph="SELECT * FRO... t_comment" />
+            <marker date="1591772274593" expanded="true" signature="1311:1442" ph="insert into t_comment... " />
+            <marker date="1591772274593" expanded="true" signature="1525:1561" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/GradeMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1352">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1591763834623" expanded="true" signature="1319:1572" ph="insert into t_grade... " />
+            <marker date="1591763834623" expanded="true" signature="1663:1747" ph="SELECT * FRO... t_grade" />
+            <marker date="1591763834623" expanded="true" signature="1826:1924" ph="SELECT COUNT... t_grade" />
+            <marker date="1591763834623" expanded="true" signature="2014:2105" ph="SELECT * FRO... t_grade" />
+            <marker date="1591763834623" expanded="true" signature="2194:2271" ph="SELECT * FRO... t_grade" />
+            <marker date="1591763834623" expanded="true" signature="2371:2573" ph="UPDATE t_gra... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PostMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-395">
+          <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="42" />
+          <folding>
+            <marker date="1591601452544" expanded="true" signature="1226:1253" ph="SELECT COUNT... t_post" />
+            <marker date="1591601452544" expanded="true" signature="1329:1423" ph="SELECT * FRO... t_post" />
+            <marker date="1591601452544" expanded="true" signature="1502:1541" ph="SELECT * FRO... t_post" />
+            <marker date="1591601452544" expanded="true" signature="1636:1869" ph="insert into t_post... " />
+            <marker date="1591601452544" expanded="true" signature="1945:1979" ph="DELETE FROM " />
+            <marker date="1591601452544" expanded="true" signature="2039:2172" ph="UPDATE t_pos... " />
+            <marker date="1591601452544" expanded="true" signature="2249:2330" ph="SELECT COUNT... t_post" />
+            <marker date="1591601452544" expanded="true" signature="2418:2566" ph="SELECT * FRO... t_post" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ContestMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="24" column="22" lean-forward="false" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+          <folding>
+            <marker date="1591779699103" expanded="true" signature="1173:1203" ph="SELECT COUNT... t_contest" />
+            <marker date="1591779699103" expanded="true" signature="1282:1394" ph="SELECT FROM t_contest" />
+            <marker date="1591779699103" expanded="true" signature="1477:1524" ph="SELECT * FRO... t_contest" />
+            <marker date="1591779699103" expanded="true" signature="1630:1868" ph="insert into t_contest... " />
+            <marker date="1591779699103" expanded="true" signature="1977:2259" ph="UPDATE t_con... " />
+            <marker date="1591779699103" expanded="true" signature="2372:2465" ph="UPDATE t_con... " />
+            <marker date="1591779699103" expanded="true" signature="2541:2587" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi/3.14-beta1/poi-3.14-beta1.jar!/org/apache/poi/ss/usermodel/Workbook.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="56" column="10" lean-forward="false" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-resultContestBoard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/test/FileUploadTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="54" column="9" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="54" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="66" column="44" lean-forward="true" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/manage/manage-questionBoard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="228" column="44" lean-forward="true" selection-start-line="228" selection-start-column="44" selection-end-line="228" selection-end-column="44" />
+          <folding>
+            <element signature="e#15443#15450#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/controller/AccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="71" column="41" lean-forward="false" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.2.0.RELEASE/spring-web-4.2.0.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+        <state relative-caret-position="174">
+          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/Quesetion_ContestMapper.xml">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="16" column="40" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+        <state relative-caret-position="1034">
+          <caret line="280" column="0" lean-forward="false" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/util/ExcelUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
           <folding>
-            <marker date="1591701776361" expanded="true" signature="575:665" ph="INSERT INTO t_contest_problem... " />
-            <marker date="1591701776361" expanded="true" signature="747:810" ph="SELECT * FRO... t_contest_problem" />
-            <marker date="1591701776361" expanded="true" signature="886:957" ph="DELETE FROM " />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2131#2139#0" expanded="true" />
+            <element signature="e#9135#9144#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/user/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-725">
+          <caret line="101" column="82" lean-forward="false" selection-start-line="101" selection-start-column="65" selection-end-line="101" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/service/QuestionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="39" column="59" lean-forward="false" selection-start-line="39" selection-start-column="59" selection-end-line="39" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/service/impl/QuestionServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="144" column="99" lean-forward="false" selection-start-line="144" selection-start-column="99" selection-end-line="144" selection-end-column="99" />
+        <state relative-caret-position="222">
+          <caret line="171" column="34" lean-forward="false" selection-start-line="171" selection-start-column="34" selection-end-line="171" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/service/impl/Question_ContentServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/js/user/profile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
-          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1125#1126#0" expanded="true" />
-            <element signature="e#1190#1191#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-579">
+          <caret line="125" column="54" lean-forward="true" selection-start-line="125" selection-start-column="54" selection-end-line="125" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/service/Question_ContentService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assert/js/manage/manage-questionBoard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="178">
+          <caret line="374" column="45" lean-forward="false" selection-start-line="374" selection-start-column="45" selection-end-line="374" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/controller/QuestionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="45" column="56" lean-forward="false" selection-start-line="45" selection-start-column="56" selection-end-line="45" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/entity/Question.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-518">
-          <caret line="199" column="37" lean-forward="false" selection-start-line="199" selection-start-column="37" selection-end-line="199" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/controller/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bolife/online/controller/ContestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1802">
-          <caret line="122" column="0" lean-forward="true" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+        <state relative-caret-position="207">
+          <caret line="93" column="44" lean-forward="false" selection-start-line="93" selection-start-column="44" selection-end-line="93" selection-end-column="44" />
           <folding />
         </state>
       </provider>

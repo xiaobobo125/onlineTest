@@ -222,7 +222,7 @@ var manageAccountListPage = {
     deleteAccountAction: function (index) {
         $.ajax({
             url : app.URL.deleteAccountUrl()+index,
-            type : "DELETE",
+            type : "POST",
             dataType: "json",
             contentType : "application/json;charset=UTF-8",
             success:function(result) {

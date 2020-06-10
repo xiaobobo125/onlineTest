@@ -37,4 +37,10 @@ public interface QuestionMapper {
     Integer getQuestionCountByQuestionType(@Param("questionType") int questionType);
 
     List<Question> getAllQuestion();
+
+    List<Question> getQuestionBySubjectId(@Param("subjectId") Integer subjectId);
+
+    boolean updateQuestionById(@Param("question") Question question);
+
+    Integer getCountBySubjectId(@Param("subjectId") Integer subjectId);
 }

@@ -102,4 +102,9 @@ public class PostServiceImpl implements PostService {
         data.put("posts", posts);
         return data;
     }
+
+    @Override
+    public boolean deletePostById(int id) {
+        return postMapper.deletePost(id) > 0;
+    }
 }

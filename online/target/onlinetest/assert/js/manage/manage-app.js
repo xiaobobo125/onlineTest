@@ -24,7 +24,7 @@ var app = {
             return app.data.contextPath+"/problemset/list";
         },
         updateAccountUrl: function () {
-            return app.data.contextPath+"/account/api/updateAccount";
+            return app.data.contextPath+"/anccount/api/updateAccout";
         },
         updatePasswordUrl: function () {
             return app.data.contextPath+"/account/api/updatePassword";
@@ -55,6 +55,9 @@ var app = {
         },
         deleteQuestionUrl: function () {
             return app.data.contextPath+"/question/api/deleteQuestion/";
+        },
+        deleteQuestion_contentUrl: function () {
+            return app.data.contextPath+"/question/api/deleteQuestion_content/";
         },
         manageQuestionUrl: function () {
             return app.data.contextPath+"/manage/question/list"

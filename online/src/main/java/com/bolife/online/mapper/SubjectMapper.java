@@ -18,4 +18,10 @@ public interface SubjectMapper {
     Integer getCount();
 
     Subject getSubjectById(@Param("id") Integer id);
+
+    int insertSubject(@Param("subject")Subject subject);
+
+    Integer updateSubject(@Param("subject")Subject subject);
+
+    boolean deleteSubjectById(@Param("id")int id);
 }

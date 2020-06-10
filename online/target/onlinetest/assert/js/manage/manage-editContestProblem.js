@@ -65,13 +65,12 @@ var manageEditContestProblemPage = {
         var queAns = $('#queAns').val();
         var program = $('#program').val();
         var contestId = manageEditContestProblemPage.data.contest.id;
+        var subjectId = manageEditContestProblemPage.data.contest.subjectId;
 
         if (manageEditContestProblemPage.checkAddQuestionData(soloSel,manySel,queAns,program)) {
             $.ajax({
                 url : app.URL.randomContestUrl(),
                 type : "POST",
-                // dataType: "json",
-                // contentType : "application/json;charset=UTF-8",
                 <!-- 向后端传输的数据 -->
                 data : {
                     soloSel: soloSel,
@@ -79,13 +78,14 @@ var manageEditContestProblemPage = {
                     queAns: queAns,
                     program: program,
                     contestId: contestId,
+                    subjectId: subjectId,
                 },
                 success:function(result) {
                     if (result && result['success']) {
                         // 验证通过 刷新页面
                         window.location.reload();
                     } else {
-                        $('#loginModalErrorMessage').html('<i class="close icon"></i><div class="header">错误提示</div>\n' +
+                        $('#loginModalErrorMessage').html('<i class="close icon"></i><div class="header">错误提示: </div>' +
                             '                <p>'+result.message+'</p>');
                         $('#loginModalErrorMessage').removeClass('hidden');
                     }
@@ -204,7 +204,7 @@ var manageEditContestProblemPage = {
     },
     deleteQuestionAction: function (index) {
         $.ajax({
-            url : app.URL.deleteQuestionUrl()+index,
+            url : app.URL.deleteQuestion_contentUrl()+index,
             type : "GET",
             dataType: "json",
             contentType : "application/json;charset=UTF-8",

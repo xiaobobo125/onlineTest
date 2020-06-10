@@ -16,4 +16,6 @@ public interface CommenService {
     Integer addComment(Comment comment);
 
     Map<String,Object> getComments(int page, int commentPageSize);
+
+    boolean deleteCommentById(int id);
 }

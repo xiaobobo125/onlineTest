@@ -17,4 +17,12 @@ public interface ContestService {
     Contest getContestById(int contestId);
 
     List<Contest> getAllContests();
+
+    boolean updateContest(Contest contest);
+
+    boolean deleteContest(int id);
+
+    Integer addContest(Contest contest);
+
+    void updateContestStateById(int id, int contestState);
 }

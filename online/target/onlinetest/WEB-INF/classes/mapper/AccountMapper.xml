@@ -38,11 +38,38 @@
     <update id="updateAccountById" parameterType="com.bolife.online.entity.Account">
         UPDATE t_account
         SET
+        <if test="account.name!=null">
+          `name`=#{account.name},
+        </if>
+        <if test="account.username != null">
+            username=#{account.username},
+        </if>
         password = #{account.password}, qq = #{account.qq}, phone = #{account.phone},
-        email = #{account.email}, description = #{account.description},
-        avatar_img_url = #{account.avatarImgUrl}
+        email = #{account.email}, description = #{account.description}
+        <if test="account.avatarImgUrl!=null">
+          ,avatar_img_url = #{account.avatarImgUrl}
+        </if>
         WHERE
         id = #{account.id}
     </update>
 
+    <delete id="deleteAccount" parameterType="int" >
+        delete from t_account
+        where id = #{id}
+    </delete>
+
+    <update id="updateState" >
+        update t_account set
+        state = #{state}
+        where id = #{id}
+    </update>
+
+    <insert id="insertAccount" parameterType="com.bolife.online.entity.Account" >
+        insert into t_account
+        (name, username, password, qq, phone, email, description,
+        avatar_img_url, level)
+        values (#{account.name}, #{account.username}, #{account.password},
+        #{account.qq}, #{account.phone}, #{account.email}, #{account.description},
+        #{account.avatarImgUrl}, #{account.level})
+    </insert>
 </mapper>

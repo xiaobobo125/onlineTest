@@ -22,4 +22,10 @@ public interface AccountMapper {
     boolean updateAccountById(@Param("account") Account account);
 
     int getCount();
+
+    int insertAccount(@Param("account") Account account);
+
+    int deleteAccount(@Param("id") int id);
+
+    int updateState(@Param("id") int id, @Param("state") int state);
 }

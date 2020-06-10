@@ -27,5 +27,12 @@ public interface ContestMapper {
 
     Contest getContestById(@Param("contestId") int contestId);
 
-    void updateContestById(@Param("contest") Contest contest);
+    Integer updateContestById(@Param("contest") Contest contest);
+
+    Integer deleteContest(@Param("id") int id);
+
+    Integer insertContest(@Param("contest") Contest contest);
+
+    void updateContestStateById(@Param("id") int id,
+                                @Param("contestState") int contestState);
 }

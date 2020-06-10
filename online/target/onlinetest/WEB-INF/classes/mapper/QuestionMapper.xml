@@ -61,6 +61,9 @@
     <select id="getQuestionById" resultMap="BaseResultMap">
         SELECT * FROM t_question WHERE id=#{id}
     </select>
+    <select id="getQuestionBySubjectId" resultMap="BaseResultMap">
+        SELECT * FROM t_question WHERE subject_id=#{subjectId}
+    </select>
     <select id="getCountByContent" resultType="int">
         SELECT
         COUNT(1)
@@ -96,5 +99,23 @@
     </insert>
     <select id="getAllQuestion" resultMap="BaseResultMap">
         SELECT * FROM t_question
+    </select>
+
+    <update id="updateQuestionById" parameterType="com.bolife.online.entity.Question">
+        UPDATE t_question
+        SET
+        title = #{question.title}, content = #{question.content},
+        question_type = #{question.questionType}, option_a = #{question.optionA},
+        option_b = #{question.optionB}, option_c = #{question.optionC},
+        option_d = #{question.optionD}, answer = #{question.answer},
+        parse = #{question.parse}, subject_id = #{question.subjectId},
+        contest_id = #{question.contestId}, score = #{question.score},
+        difficulty = #{question.difficulty}
+        WHERE
+        id = #{question.id}
+    </update>
+
+    <select id="getCountBySubjectId" resultType="Integer">
+        SELECT COUNT(*) FROM t_question WHERE subject_id = #{subjectId}
     </select>
 </mapper>

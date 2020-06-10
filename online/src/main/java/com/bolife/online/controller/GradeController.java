@@ -4,8 +4,11 @@ import com.bolife.online.dto.AjaxResult;
 import com.bolife.online.entity.Account;
 import com.bolife.online.entity.Grade;
 import com.bolife.online.entity.Question;
+import com.bolife.online.entity.Question_Contest;
+import com.bolife.online.service.ContestService;
 import com.bolife.online.service.GraderService;
 import com.bolife.online.service.QuestionService;
+import com.bolife.online.service.Question_ContentService;
 import com.bolife.online.util.FinalDefine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,6 +36,11 @@ public class GradeController extends BaseController {
     @Autowired
     private GraderService graderService;
 
+    @Autowired
+    private ContestService contestService;
+
+    @Autowired
+    private Question_ContentService question_contentService;
     @RequestMapping(value = "/api/submitContest",method = RequestMethod.POST)
     @ResponseBody
     public AjaxResult submitProblem(HttpServletRequest request, @RequestBody Grade grade){
@@ -41,7 +49,8 @@ public class GradeController extends BaseController {
         List<String> answer = Arrays.asList(grade.getAnswerJson().split(FinalDefine.SPLIT_CHAR));
         int autoResult = 0;
         logger.info("获取题库");
-        List<Question> questionByContestId = questionService.getQuestionByContestId(grade.getContestId());
+        List<Question_Contest> byContestId = question_contentService.getByContestId(grade.getContestId());
+        List<Question> questionByContestId = questionService.getQuestionByIds(byContestId);
         for(int i = 0 ;i<questionByContestId.size();i++){
             Question question = questionByContestId.get(i);
             String ans = "";
@@ -60,8 +69,20 @@ public class GradeController extends BaseController {
         grade.setManulResult(0);
         grade.setFinishTime(new Date());
         logger.info("添加成绩");
-        Grade stuGrade = graderService.getGradeByConIdAndStuId(grade.getContestId(), grade.getStudentId());
         Integer integer = graderService.addGrade(grade);
         return  ajaxResult.setData(integer);
+    }
+
+    //完成批改试卷
+    @RequestMapping(value="/api/finishGrade", method= RequestMethod.POST)
+    @ResponseBody
+    public AjaxResult finishGrade(@RequestBody Grade grade) {
+        AjaxResult ajaxResult = new AjaxResult();
+        grade.setResult(grade.getAutoResult()+grade.getManulResult());
+        grade.setFinishTime(new Date());
+        grade.setState(1);
+        boolean result = graderService.updateGrade(grade);
+        contestService.updateContestStateById(grade.getContestId(),3);
+        return new AjaxResult().setData(result);
     }
 }

@@ -32,6 +32,14 @@ var manageQuestionBoardPage = {
                 backdrop : "static"
             });
         });
+        //新增题目，弹出新增窗口
+        $("#addManyQuestionBtn").click(function () {
+            $("#addManyImport").modal({
+                keyboard : false,
+                show : true,
+                backdrop : "static"
+            });
+        });
 
         //新增题目，取消题目增加
         $('#cancelAddQuestionBtn').click(function(){
@@ -43,9 +51,18 @@ var manageQuestionBoardPage = {
             manageQuestionBoardPage.addQuestionAction();
         });
 
+        $('#confirmAddManyQuestionBtn').click(function(){
+            manageQuestionBoardPage.uploadAvatar();
+        });
+
         //编辑题目，取消题目编辑
         $('#cancelUpdateQuestionBtn').click(function(){
             $("#updateQuestionModal").modal('hide');
+        });
+
+        //编辑题目，取消题目编辑
+        $('#cancelAddManyQuestionBtn').click(function(){
+            $("#addManyImport").modal('hide');
         });
 
         //编辑题目，确定保存考试
@@ -327,5 +344,46 @@ var manageQuestionBoardPage = {
         var content = $('#content').val();
         window.location.href = app.URL.manageQuestionUrl() + '?page=1&content='+content;
     },
+    uploadAvatar: function (){
+        var fileName = $('#myfile').val();　　　　　　　　　　　　　　　　　　//获得文件名称
+        var fileName1 = fileName.substring(fileName.lastIndexOf(".") + 1).toLowerCase();
+        if(fileName1 != "xls" && fileName1 !="xlsx"){
+            $('#updateErrorMessage').html('<i class="close icon"></i><div class="header">错误提示</div>\n' +
+                '                <p>*上传文件类型错误,支持类型: .xlsx .xls</p>');
+            $('#updateErrorMessage').removeClass('hidden');
+            return false;
+        }
+        //判断文件大小
+        var size1 = $("input[name='myfile']")[0].files[0].size;
+        if (size1>104857600) {
+            alert("上传文件不能大于100M!");
+            return false;
+        }
+        var formData = new FormData();
+        formData.append('file', $('#myfile')[0].files[0]);
+        var subjectId = $('#insertSubjectId').val();
+        formData.append("subjectId",subjectId);
+        $.ajax({
+            url: "/question/api/uploadFile",　　　　　　　　　　//上传地址
+            type: 'POST',
+            cache: false,
+            data: formData,
+            processData: false,
+            contentType: false,
+            success:function(result){
+                if (result && result['success']) {
+                    alert(123);
+                } else {
+                    $('#updateErrorMessage').html('<i class="close icon"></i><div class="header">错误提示</div>\n' +
+                        '                <p>'+result.message+'</p>');
+                    $('#updateErrorMessage').removeClass('hidden');
+                }
 
+            },
+            error:function (e) {
+                alert(1+e);
+
+            }
+        });
+    },
 };

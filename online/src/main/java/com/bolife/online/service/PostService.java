@@ -21,4 +21,6 @@ public interface PostService {
     Boolean updateReplyNumById(int postId);
 
     Map<String,Object> getPostsByAuthorId(int page, int postPageSize, int id);
+
+    boolean deletePostById(int id);
 }

@@ -5,10 +5,7 @@ import com.bolife.online.entity.Post;
 import com.bolife.online.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
@@ -31,5 +28,12 @@ public class PostController {
         post.setUpdateTime(new Date());
         Integer integer = postService.addPost(post);
         return ajaxResult.setData(integer);
+    }
+    //删除帖子
+    @RequestMapping("/api/deletePost/{id}")
+    public AjaxResult deletePost(@PathVariable int id) {
+        AjaxResult ajaxResult = new AjaxResult();
+        boolean result = postService.deletePostById(id);
+        return new AjaxResult().setData(result);
     }
 }

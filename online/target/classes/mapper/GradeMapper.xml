@@ -40,4 +40,18 @@
         FROM t_grade
         WHERE state = 1 AND student_id = #{studentId}
     </select>
+    <select id="getGradesByContestId" resultMap="BaseResultMap" >
+        SELECT
+        *
+        FROM t_grade
+        WHERE contest_id = #{contestId}
+    </select>
+    <update id="updateGrade" parameterType="com.bolife.online.entity.Grade">
+        UPDATE t_grade
+        SET
+        result = #{grade.result}, manul_result = #{grade.manulResult},
+        finish_time = #{grade.finishTime}, state = #{grade.state}
+        WHERE
+        id = #{grade.id}
+    </update>
 </mapper>

@@ -67,7 +67,7 @@ var manageCommentBoardPage = {
     deleteCommentAction: function (index) {
         $.ajax({
             url : app.URL.deleteCommentUrl()+index,
-            type : "DELETE",
+            type : "GET",
             dataType: "json",
             contentType : "application/json;charset=UTF-8",
             success:function(result) {

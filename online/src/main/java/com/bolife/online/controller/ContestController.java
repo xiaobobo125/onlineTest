@@ -1,10 +1,7 @@
 package com.bolife.online.controller;
 
 import com.bolife.online.dto.AjaxResult;
-import com.bolife.online.entity.Account;
-import com.bolife.online.entity.Contest;
-import com.bolife.online.entity.Grade;
-import com.bolife.online.entity.Question;
+import com.bolife.online.entity.*;
 import com.bolife.online.exception.QexzWebError;
 import com.bolife.online.service.ContestService;
 import com.bolife.online.service.GraderService;
@@ -58,7 +55,8 @@ public class ContestController extends BaseController {
                     || contest.getEndTime().getTime() < System.currentTimeMillis()){
             return "redirect:/contest/index";
         }
-        List<Question> questionByContestId = questionService.getQuestionByContestId(contestId);
+        List<Question_Contest> byContestId = question_contentService.getByContestId(contestId);
+        List<Question> questionByContestId = questionService.getQuestionByIds(byContestId);
         for (Question question : questionByContestId) {
             question.setAnswer("");
         }
@@ -69,6 +67,45 @@ public class ContestController extends BaseController {
         return "/contest/detail";
     }
 
+    @RequestMapping(value="/api/addContest", method= RequestMethod.POST)
+    @ResponseBody
+    public AjaxResult addContest(@RequestBody Contest contest) {
+        AjaxResult ajaxResult = new AjaxResult();
+        contest.setUpdateTime(new Date());
+        int contestId = contestService.addContest(contest);
+        return new AjaxResult().setData(contestId);
+    }
+
+    //更新考试信息
+    @RequestMapping(value="/api/updateContest", method= RequestMethod.POST)
+    @ResponseBody
+    public AjaxResult updateContest(@RequestBody Contest contest) {
+        AjaxResult ajaxResult = new AjaxResult();
+        boolean result = contestService.updateContest(contest);
+        return new AjaxResult().setData(result);
+    }
+
+    //删除考试信息
+    @RequestMapping("/api/deleteContest/{id}")
+    @ResponseBody
+    public AjaxResult deleteContest(@PathVariable int id) {
+        AjaxResult ajaxResult = new AjaxResult();
+        boolean result = contestService.deleteContest(id);
+        return new AjaxResult().setData(result);
+    }
+
+    //完成考试批改
+    @RequestMapping(value="/api/finishContest/{id}", method= RequestMethod.POST)
+    @ResponseBody
+    public AjaxResult finishContest(@PathVariable int id) {
+        AjaxResult ajaxResult = new AjaxResult();
+        Contest contest = contestService.getContestById(id);
+        contest.setState(3);
+        boolean result = contestService.updateContest(contest);
+        return ajaxResult.setData(result);
+    }
+
+
     @RequestMapping(value = "api/randomContest",method = RequestMethod.POST)
     @ResponseBody
     public AjaxResult randomContest(HttpServletRequest request){
@@ -78,7 +115,8 @@ public class ContestController extends BaseController {
         Integer queAns = Integer.valueOf(request.getParameter("queAns"));
         Integer program = Integer.valueOf(request.getParameter("program"));
         Integer contestId = Integer.valueOf(request.getParameter("contestId"));
-        List<Question> allQuestion = questionService.getAllQuestion();
+        Integer subjectId = Integer.valueOf(request.getParameter("subjectId"));
+        List<Question> allQuestion = questionService.getQuestionBySubjectId(subjectId);
         Map<Integer,List<Question>> queCount = new HashMap<>();
         for (Question question : allQuestion) {
             if(!queCount.containsKey(question.getQuestionType())){

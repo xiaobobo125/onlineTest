@@ -37,4 +37,7 @@
         (user_id, post_id, content)
         values (#{comment.userId}, #{comment.postId}, #{comment.content})
     </insert>
+    <delete id="deleteCommentById" parameterType="Integer">
+        DELETE FROM t_comment WHERE id=#{id}
+    </delete>
 </mapper>

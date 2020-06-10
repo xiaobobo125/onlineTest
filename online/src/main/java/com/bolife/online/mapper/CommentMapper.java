@@ -20,4 +20,6 @@ public interface CommentMapper {
     int getCount();
 
     List<Comment> getComments();
+
+    Integer deleteCommentById(@Param("id") int id);
 }

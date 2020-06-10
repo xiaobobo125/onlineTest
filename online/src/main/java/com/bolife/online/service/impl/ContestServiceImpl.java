@@ -77,4 +77,24 @@ public class ContestServiceImpl implements ContestService {
     public List<Contest> getAllContests() {
         return contestMapper.getContests();
     }
+
+    @Override
+    public boolean updateContest(Contest contest) {
+        return contestMapper.updateContestById(contest) > 0;
+    }
+
+    @Override
+    public boolean deleteContest(int id) {
+        return contestMapper.deleteContest(id) > 0;
+    }
+
+    @Override
+    public Integer addContest(Contest contest) {
+        return contestMapper.insertContest(contest);
+    }
+
+    @Override
+    public void updateContestStateById(int id, int contestState) {
+        contestMapper.updateContestStateById(id,contestState);
+    }
 }

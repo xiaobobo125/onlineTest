@@ -3,6 +3,7 @@ package com.bolife.online.service;
 import com.bolife.online.entity.Question;
 import com.bolife.online.entity.Question_Contest;
 
+import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
@@ -29,4 +30,12 @@ public interface QuestionService {
     List<Question> getAllQuestion();
 
     List<Question> getQuestionByIds(List<Question_Contest> byContestId);
+
+    List<Question> getQuestionBySubjectId(Integer subjectId);
+
+    boolean updateQuestion(Question question);
+
+    Integer getCountQuestionBySubject(Integer subjectId);
+
+    Integer insertManyFile(InputStream in, String filename, Integer subjectId);
 }

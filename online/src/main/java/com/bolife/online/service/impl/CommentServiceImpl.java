@@ -63,4 +63,9 @@ public class CommentServiceImpl implements CommenService {
         data.put("comments", comments);
         return data;
     }
+
+    @Override
+    public boolean deleteCommentById(int id) {
+        return commentMapper.deleteCommentById(id) > 0;
+    }
 }

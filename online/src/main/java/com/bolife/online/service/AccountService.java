@@ -20,4 +20,12 @@ public interface AccountService {
     boolean updateAccount(Account currentAccount);
 
     Map<String,Object> getAccounts(int page, int accountPageSize);
+
+    int addAccount(Account account);
+
+    boolean deleteAccount(int id);
+
+    boolean disabledAccount(int id);
+
+    boolean abledAccount(int id);
 }

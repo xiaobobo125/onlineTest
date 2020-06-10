@@ -3,6 +3,7 @@ package com.bolife.online.mapper;
 import com.bolife.online.entity.Post;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.omg.CORBA.INTERNAL;
 
 import java.util.Date;
 import java.util.List;
@@ -22,7 +23,7 @@ public interface PostMapper {
 
     Integer insert(@Param("post") Post post);
 
-    void deletePost(@Param("pid") int pid);
+    Integer deletePost(@Param("pid") int pid);
 
     Integer updateReplyNumById(@Param("postId") int postId, @Param("lastReplyTime") Date lastReplyTime);
 

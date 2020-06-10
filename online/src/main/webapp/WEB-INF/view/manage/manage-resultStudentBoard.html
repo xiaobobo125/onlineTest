@@ -93,7 +93,7 @@
                         <td>
                             <button type="button" th:if="${item.state == 0}" class="btn btn-primary btn-xs" th:onclick="'manageResultStudentBoardPage.updateGradeModalAction('+${itemStats.index}+')'"><i class="fa fa-edit"></i>评分</button>
                             <button type="button" th:if="${item.state == 1}" class="btn btn-default disabled btn-xs"><i class="fa fa-edit"></i>已评分</button>
-                            <button type="button" class="btn btn-danger btn-xs" th:onclick="'manageEditContestProblemPage.deleteQuestionAction('+${item.id}+')'"><i class="fa fa-trash"></i>删除</button>
+                            <button type="button" th:if="${item.state == 1}" class="btn btn-primary btn-xs" th:onclick="'manageResultStudentBoardPage.updateGradeModalAction('+${itemStats.index}+')'"><i class="fa fa-edit"></i>修改成绩</button>
                         </td>
                     </tr>
                     </tbody>
@@ -112,38 +112,6 @@
                 <h4 class="modal-title" id="gradeTitle">曾庆熙的主观题答题卡</h4>
             </div>
             <div class="modal-body" id="gradeBody">
-                <!--
-                <input type="hidden" id="updateContestIndex" />
-                <div class="row">
-                    <form class="form-horizontal" role="form" onsubmit="return false;">
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">题号</label>
-                            <div class="col-sm-8">
-                                <input id="" type="text" class="form-control" placeholder="" />
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">考生答案</label>
-                            <div class="col-sm-8">
-                                <textarea class="form-control"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">参考答案</label>
-                            <div class="col-sm-8">
-                                <textarea class="form-control"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">分值</label>
-                            <div class="col-sm-8">
-                                <input id="updateContestTitle" type="text" class="form-control" placeholder="" />
-                            </div>
-                        </div>
-                    </form>
-                    <h5 class="page-header"></h5>
-                </div>
-                -->
             </div>
             <div class="modal-footer">
                 <button data-bb-handler="confirm" type="button" id="confirmUpdateGradeBtn" class="btn btn-success radius">

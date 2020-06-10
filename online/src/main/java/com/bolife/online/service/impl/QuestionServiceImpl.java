@@ -6,14 +6,18 @@ import com.bolife.online.entity.Question_Contest;
 import com.bolife.online.mapper.ContestMapper;
 import com.bolife.online.mapper.QuestionMapper;
 import com.bolife.online.service.QuestionService;
+import com.bolife.online.util.ExcelUtil;
+import com.bolife.online.util.FinalDefine;
 import com.github.pagehelper.PageHelper;
+import jdk.internal.util.xml.impl.Input;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.*;
 
 /**
  * @Auther: Mr.BoBo
@@ -21,6 +25,7 @@ import java.util.Map;
  * @Description:
  */
 @Service
+@SuppressWarnings("all")
 public class QuestionServiceImpl implements QuestionService {
     @Autowired
     private QuestionMapper questionMapper;
@@ -146,5 +151,78 @@ public class QuestionServiceImpl implements QuestionService {
             questions.add(questionById);
         }
         return questions;
+    }
+
+    @Override
+    public List<Question> getQuestionBySubjectId(Integer subjectId) {
+        return questionMapper.getQuestionBySubjectId(subjectId);
+    }
+
+    @Override
+    public boolean updateQuestion(Question question) {
+        return questionMapper.updateQuestionById(question);
+    }
+
+    @Override
+    public Integer getCountQuestionBySubject(Integer subjectId) {
+        return questionMapper.getCountBySubjectId(subjectId);
+    }
+
+    @Override
+    public Integer insertManyFile(InputStream in,String filename, Integer subjectId) {
+        Integer cou = 0;
+        try {
+            List<List<Object>> bankListByExcel = ExcelUtil.getBankListByExcel(in, "D:/test.xls");
+            List<Question> questions = new ArrayList<>();
+            for (List<Object> objects : bankListByExcel) {
+                Question qu = new Question();
+                List<Object> list = objects;
+                String flag = String.valueOf(list.get(0));
+                qu.setTitle(String.valueOf(list.get(1)));
+                qu.setContent(String.valueOf(list.get(1)));
+                if(flag.equals("xz")){
+                    qu.setOptionA(String.valueOf(list.get(2)));
+                    qu.setOptionB(String.valueOf(list.get(3)));
+                    qu.setOptionC(String.valueOf(list.get(4)));
+                    qu.setOptionD(String.valueOf(list.get(5)));
+                    qu.setAnswer(String.valueOf(list.get(6)));
+                    qu.setQuestionType(0);
+                    qu.setScore(2);
+                }else  if(flag.equals("tk")){
+                    String answer = "";
+                    for (int i = 2 ; i < list.size();i++){
+                        answer += String.valueOf(list.get(i));
+                        answer+= FinalDefine.SPLIT_CHAR;
+                    }
+                    qu.setScore(2);
+                    qu.setAnswer(answer);
+                    qu.setQuestionType(2);
+                }else if(flag.equals("pd")){
+                    qu.setOptionA(String.valueOf(list.get(2)));
+                    qu.setOptionB(String.valueOf(list.get(3)));
+                    qu.setAnswer(String.valueOf(list.get(4)));
+                    qu.setQuestionType(1);
+                    qu.setScore(1);
+                }else if (flag.equals("hd")){
+                    qu.setAnswer(String.valueOf(list.get(2)));
+                    qu.setQuestionType(2);
+                    qu.setScore(6);
+                }
+                qu.setState(1);
+                qu.setUpdateTime(new Date());
+                qu.setDifficulty(2);
+                qu.setSubjectId(subjectId);
+                questions.add(qu);
+            }
+            for (Question question : questions) {
+                int count = questionMapper.insertQuestion(question);
+                cou+=count;
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return cou;
     }
 }

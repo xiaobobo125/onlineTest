@@ -3,8 +3,10 @@ package com.bolife.online.service.impl;
 import com.bolife.online.entity.Account;
 import com.bolife.online.mapper.AccountMapper;
 import com.bolife.online.service.AccountService;
+import com.bolife.online.util.FinalDefine;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -73,5 +75,26 @@ public class AccountServiceImpl implements AccountService {
         data.put("totalPageSize", count);
         data.put("accounts", accounts);
         return data;
+    }
+
+    @Override
+    public boolean deleteAccount(int id) {
+        return accountMapper.deleteAccount(id) > 0;
+    }
+
+    @Override
+    public boolean disabledAccount(int id) {
+        return accountMapper.updateState(id, 1) > 0;
+    }
+
+    @Override
+    public boolean abledAccount(int id) {
+        return accountMapper.updateState(id, 0) > 0;
+    }
+
+    @Override
+    public int addAccount(Account account) {
+        account.setAvatarImgUrl(FinalDefine.DEFAULT_AVATAR_IMG_URL);
+        return accountMapper.insertAccount(account);
     }
 }

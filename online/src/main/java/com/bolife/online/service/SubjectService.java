@@ -16,4 +16,10 @@ public interface SubjectService {
     Subject getSubjectById(Integer problemsetId);
 
     List<Subject> getAllSubjects();
+
+    int addSubject(Subject subject);
+
+    boolean updateSubject(Subject subject);
+
+    boolean deleteSubjectById(int id);
 }

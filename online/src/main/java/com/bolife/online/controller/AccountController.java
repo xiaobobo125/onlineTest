@@ -13,10 +13,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -235,5 +232,67 @@ public class AccountController extends BaseController{
             return AjaxResult.fixedError(QexzWebError.UPLOAD_FILE_IMAGE_ANALYZE_ERROR);
         }
         return ajaxResult;
+    }
+
+    @RequestMapping(value="/api/addAccount", method= RequestMethod.POST)
+    @ResponseBody
+    public AjaxResult addAccount(@RequestBody Account account) {
+        AjaxResult ajaxResult = new AjaxResult();
+        Account existAccount = accountService.getAccountByUsername(account.getUsername());
+        if(existAccount == null) {//检测该用户是否已经注册
+            account.setPassword(MD5.md5(FinalDefine.MD5_SALT+account.getPassword()));
+            account.setAvatarImgUrl(FinalDefine.DEFAULT_AVATAR_IMG_URL);
+            account.setDescription("");
+            account.setUpdateTime(new Date());
+            int accountId = accountService.addAccount(account);
+            return new AjaxResult().setData(accountId);
+        }
+        return AjaxResult.fixedError(QexzWebError.AREADY_EXIST_USERNAME);
+    }
+
+    /**
+     * API:更新用户
+     */
+    @RequestMapping(value="/api/updateManegeAccount", method= RequestMethod.POST)
+    @ResponseBody
+    public AjaxResult updateAccount(@RequestBody Account account) {
+        AjaxResult ajaxResult = new AjaxResult();
+        account.setPassword(MD5.md5(FinalDefine.MD5_SALT+account.getPassword()));
+        account.setUpdateTime(new Date());
+        boolean result = accountService.updateAccount(account);
+        return new AjaxResult().setData(result);
+    }
+
+    /**
+     * API:删除用户
+     */
+    @RequestMapping("/api/deleteAccount/{id}")
+    @ResponseBody
+    public AjaxResult deleteAccount(@PathVariable int id) {
+        AjaxResult ajaxResult = new AjaxResult();
+        boolean result = accountService.deleteAccount(id);
+        return new AjaxResult().setData(result);
+    }
+
+    /**
+     * API:禁用账号
+     */
+    @RequestMapping(value="/api/disabledAccount/{id}", method= RequestMethod.POST)
+    @ResponseBody
+    public AjaxResult disabledAccount(@PathVariable int id) {
+        AjaxResult ajaxResult = new AjaxResult();
+        boolean result = accountService.disabledAccount(id);
+        return new AjaxResult().setData(result);
+    }
+
+    /**
+     * API:解禁账号
+     */
+    @RequestMapping(value="/api/abledAccount/{id}", method= RequestMethod.POST)
+    @ResponseBody
+    public AjaxResult abledAccount(@PathVariable int id) {
+        AjaxResult ajaxResult = new AjaxResult();
+        boolean result = accountService.abledAccount(id);
+        return new AjaxResult().setData(result);
     }
 }

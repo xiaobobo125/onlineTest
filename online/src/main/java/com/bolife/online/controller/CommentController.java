@@ -6,10 +6,7 @@ import com.bolife.online.service.CommenService;
 import com.bolife.online.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Auther: Mr.BoBo
@@ -32,5 +29,12 @@ public class CommentController {
         postService.updateReplyNumById(comment.getPostId());
         Integer integer = commenService.addComment(comment);
         return ajaxResult.setData(integer);
+    }
+    //删除评论
+    @RequestMapping("/api/deleteComment/{id}")
+    public AjaxResult deleteComment(@PathVariable int id) {
+        AjaxResult ajaxResult = new AjaxResult();
+        boolean result = commenService.deleteCommentById(id);
+        return new AjaxResult().setData(result);
     }
 }

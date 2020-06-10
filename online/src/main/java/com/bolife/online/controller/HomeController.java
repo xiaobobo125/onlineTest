@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -51,13 +52,25 @@ public class HomeController extends BaseController {
         Map<String, Object> contests = contestService.getContests(page, FinalDefine.contestPageSize);
         List<Contest> contestList = (List<Contest>) contests.get("contests");
         logger.info("获取用户成绩");
-        if(user != null){
-            for (Contest contest : contestList) {
+        for (Contest contest : contestList) {
+            Date startTime = contest.getStartTime();
+            long time = startTime.getTime();
+            long endDate = contest.getEndTime().getTime();
+            long nowDate = new Date().getTime();
+            if(time <= nowDate && nowDate < endDate){
+                contestService.updateContestStateById(contest.getId(),1);
+                contest.setState(1);
+            }
+            if(endDate <= nowDate && contest.getState() == 1){
+                contestService.updateContestStateById(contest.getId(),3);
+                contest.setState(2);
+            }
+            if(user != null) {
                 Grade gradeByConIdAndStuId = graderService.getGradeByConIdAndStuId(contest.getId(), user.getId());
-                if(gradeByConIdAndStuId != null){
+                if (gradeByConIdAndStuId != null) {
                     System.out.println(gradeByConIdAndStuId);
                     contest.setUserState(1);
-                }else {
+                } else {
                     contest.setUserState(0);
                 }
             }
@@ -129,6 +142,7 @@ public class HomeController extends BaseController {
         model.addAttribute(FinalDefine.DATA, data);
         return "/problem/problemlist";
     }
+
     @RequestMapping(value="/problemset/{problemsetId}/problem/{problemId}", method= RequestMethod.GET)
     public String problemDetail(HttpServletRequest request,
                                 @PathVariable("problemsetId") Integer problemsetId,

@@ -37,7 +37,6 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="javascript:void(0);">修改密码</a></li>
                         <li><a id="logout">退出系统</a></li>
                     </ul>
                 </li>
@@ -135,7 +134,7 @@
                         </td>
                         <td th:text="${item.score}"></td>
                         <td>
-                            <button type="button" class="btn btn-primary btn-xs" th:onclick="'manageEditContestProblemPage.updateQuestionModalAction('+${itemStats.index}+')'"><i class="fa fa-edit"></i>编辑</button>
+                            <button type="button" class="btn btn-primary btn-xs" th:onclick="'manageEditContestProblemPage.updateQuestionModalAction('+${itemStats.index}+')'"><i class="fa fa-edit"></i>查看</button>
                             <button type="button" class="btn btn-danger btn-xs" th:onclick="'manageEditContestProblemPage.deleteQuestionAction('+${item.id}+')'"><i class="fa fa-trash"></i>删除</button>
                         </td>
                     </tr>
@@ -156,28 +155,6 @@
             <div class="modal-body">
                 <div class="form-horizontal">
                 <form class="form-horizontal" role="form" onsubmit="return false;">
-                    <!--<div class="form-group">-->
-                        <!--<label class="col-sm-2 control-label">查询题目</label>-->
-                        <!--<div class="col-sm-8">-->
-                            <!--<input type="text" class="form-control center" id="content" placeholder="请输入题目内容进行搜索" style="width: 80%;"/>-->
-                        <!--</div>-->
-                        <!--<button data-bb-handler="confirm" type="button" id="searchProblemAction" class="btn btn-success radius">-->
-                            <!--<span><i class="icon-ok"></i></span> 查询-->
-                        <!--</button>-->
-                    <!--</div>-->
-                    <!--<div id="show-hide" style="display: none;">-->
-                        <!--<div class="form-group">-->
-                            <!--<label class="col-sm-2 control-label">题目标题</label>-->
-                            <!--<div class="col-sm-8">-->
-                                <!--<input id="questionTitle" type="text" class="form-control" placeholder="" />-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                            <!--<label class="col-sm-2 control-label">题目内容</label>-->
-                            <!--<div class="col-sm-8">-->
-                                <!--<textarea  id="questionContent" class="form-control" rows="8"></textarea>-->
-                            <!--</div>-->
-                        <!--</div>-->
                         <div class="form-group">
                             <label class="col-sm-2 control-label">单选</label>
                             <div class="col-sm-8">
@@ -210,73 +187,11 @@
                                 </select>
                             </div>
                         </div>
-                        <!--<div class="form-group">-->
-                            <!--<label class="col-sm-2 control-label">A选项</label>-->
-                            <!--<div class="col-sm-8">-->
-                                <!--<input id="optionA" type="text" class="form-control" placeholder="" />-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                            <!--<label class="col-sm-2 control-label">B选项</label>-->
-                            <!--<div class="col-sm-8">-->
-                                <!--<input id="optionB" type="text" class="form-control" placeholder="" />-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                            <!--<label class="col-sm-2 control-label">C选项</label>-->
-                            <!--<div class="col-sm-8">-->
-                                <!--<input id="optionC" type="text" class="form-control" placeholder="" />-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                            <!--<label class="col-sm-2 control-label">D选项</label>-->
-                            <!--<div class="col-sm-8">-->
-                                <!--<input id="optionD" type="text" class="form-control" placeholder="" />-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                            <!--<label class="col-sm-2 control-label">题目答案</label>-->
-                            <!--<div class="col-sm-8">-->
-                                <!--<textarea  id="questionAnswer" class="form-control" rows="8"></textarea>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                            <!--<label class="col-sm-2 control-label">答案解析</label>-->
-                            <!--<div class="col-sm-8">-->
-                                <!--<textarea  id="questionParse" class="form-control" rows="8"></textarea>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                            <!--<label class="col-sm-2 control-label">题目难度</label>-->
-                            <!--<div class="col-sm-8">-->
-                                <!--<select class="form-control" id="questionDifficulty">-->
-                                    <!--<option th:value="1">-->
-                                        <!--一星难度-->
-                                    <!--</option>-->
-                                    <!--<option th:value="2">-->
-                                        <!--二星难度-->
-                                    <!--</option>-->
-                                    <!--<option th:value="3">-->
-                                        <!--三星难度-->
-                                    <!--</option>-->
-                                    <!--<option th:value="4">-->
-                                        <!--四星难度-->
-                                    <!--</option>-->
-                                    <!--<option th:value="5">-->
-                                        <!--五星难度-->
-                                    <!--</option>-->
-                                <!--</select>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="form-group">-->
-                            <!--<label class="col-sm-2 control-label">题目分值</label>-->
-                            <!--<div class="col-sm-8">-->
-                                <!--<input id="questionScore" type="text" class="form-control" placeholder="" />-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
                 </form>
+                <div class="form-group" >
+                    <div class="col-sm-8" id="loginModalErrorMessage" style="color: #FF0000;font-weight: bold;">
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
             <button data-bb-handler="confirm" type="button" id="confirmAddQuestionBtn" class="btn btn-success radius">
@@ -390,9 +305,6 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button data-bb-handler="confirm" type="button" id="confirmUpdateQuestionBtn" class="btn btn-success radius">
-                    <span><i class="icon-ok"></i></span> 保存
-                </button>
                 <button data-bb-handler="cancel" type="button" id="cancelUpdateQuestionBtn" class="btn btn-danger radius">取消</button>
             </div>
         </div>

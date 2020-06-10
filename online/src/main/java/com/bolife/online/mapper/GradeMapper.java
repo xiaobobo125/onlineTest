@@ -22,4 +22,8 @@ public interface GradeMapper {
     int getCountByStudentId(int studentId);
 
     List<Grade> getGradesByStudentId(int studentId);
+
+    List<Grade> getGradesByContestId(@Param("contestId") int contestId);
+
+    Integer updateGrade(@Param("grade") Grade grade);
 }
