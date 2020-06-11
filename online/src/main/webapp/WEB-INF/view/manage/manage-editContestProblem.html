@@ -97,6 +97,8 @@
                         <td th:if="${item.questionType == 1}">多选</td>
                         <td th:if="${item.questionType == 2}">问答</td>
                         <td th:if="${item.questionType == 3}">编程</td>
+                        <td th:if="${item.questionType == 4}">填空</td>
+                        <td th:if="${item.questionType == 5}">判断</td>
                         <td th:if="${item.difficulty == 1}">
                             <i class="glyphicon glyphicon-star"></i>
                             <i class="glyphicon glyphicon-star-empty"></i>
@@ -180,6 +182,22 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="col-sm-2 control-label">填空</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" id="space">
+                                    <option th:each="i: ${#numbers.sequence(0,50)}" th:text="${i}" th:value="${i}">${i}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">判断</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" id="sucErr">
+                                    <option th:each="i: ${#numbers.sequence(0,50)}" th:text="${i}" th:value="${i}">${i}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="col-sm-2 control-label">编程</label>
                             <div class="col-sm-8">
                                 <select class="form-control" id="program">
@@ -235,6 +253,8 @@
                                 <option th:value="1">多选</option>
                                 <option th:value="2">问答</option>
                                 <option th:value="3">编程</option>
+                                <option th:value="4">填空</option>
+                                <option th:value="5">判断</option>
                             </select>
                         </div>
                     </div>

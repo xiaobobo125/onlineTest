@@ -84,6 +84,9 @@ public class AccountController extends BaseController{
     public String logout(HttpServletRequest request){
         request.getSession().setAttribute(FinalDefine.CURRENT_ACCOUNT,null);
         String url=request.getHeader("Referer");
+        if(url.indexOf("manage") != -1){
+            return "redirect: /";
+        }
         return "redirect:"+url;
     }
 

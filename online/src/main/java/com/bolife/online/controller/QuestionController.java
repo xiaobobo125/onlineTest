@@ -91,7 +91,7 @@ public class QuestionController extends BaseController {
         } catch (Exception e) {
             return AjaxResult.fixedError(QexzWebError.UPLOAD_FILE_IMAGE_ANALYZE_ERROR);
         }
-        return ajaxResult.setData(ajaxResult);
+        return ajaxResult.setData(integer);
     }
 
 }

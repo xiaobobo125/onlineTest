@@ -71,10 +71,12 @@ public class DiscussController {
                 collect(Collectors.toMap(Comment::getId, comment -> comment));
         for (Reply reply : replies) {
             Comment comment = id2comment.get(reply.getCommentId());
-            if(comment.getReplies() == null){
-                comment.setReplies(new ArrayList<>());
+            if(comment != null){
+                if( comment.getReplies() == null){
+                    comment.setReplies(new ArrayList<>());
+                }
+                comment.getReplies().add(reply);
             }
-            comment.getReplies().add(reply);
         }
         data.put("comments", comments);
         if (currentAccount != null){
@@ -90,6 +92,9 @@ public class DiscussController {
     @RequestMapping(value="/post", method= RequestMethod.GET)
     public String postDiscuss(HttpServletRequest request, Model model) {
         Account currentAccount = (Account) request.getSession().getAttribute(FinalDefine.CURRENT_ACCOUNT);
+        if(currentAccount == null){
+            return "redirect:/404";
+        }
         Map<String, Object> data = new HashMap<>();
         if(currentAccount != null){
             data.put("authorId", currentAccount.getId());

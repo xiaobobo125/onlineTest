@@ -37,7 +37,6 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="javascript:void(0);">修改密码</a></li>
                         <li><a id="logout">退出系统</a></li>
                     </ul>
                 </li>
@@ -99,6 +98,8 @@
                         <td th:if="${item.questionType == 1}">多选</td>
                         <td th:if="${item.questionType == 2}">问答</td>
                         <td th:if="${item.questionType == 3}">编程</td>
+                        <td th:if="${item.questionType == 4}">填空</td>
+                        <td th:if="${item.questionType == 5}">判断</td>
                         <td th:if="${item.difficulty == 1}">
                             <i class="glyphicon glyphicon-star"></i>
                             <i class="glyphicon glyphicon-star-empty"></i>
@@ -182,6 +183,8 @@
                                 <option th:value="1">多选</option>
                                 <option th:value="2">问答</option>
                                 <option th:value="3">编程</option>
+                                <option th:value="4">填空</option>
+                                <option th:value="5">判断</option>
                             </select>
                         </div>
                     </div>
@@ -341,6 +344,8 @@
                                 <option th:value="1">多选</option>
                                 <option th:value="2">问答</option>
                                 <option th:value="3">编程</option>
+                                <option th:value="4">填空</option>
+                                <option th:value="5">判断</option>
                             </select>
                         </div>
                     </div>

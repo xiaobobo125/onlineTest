@@ -114,6 +114,8 @@ public class ContestController extends BaseController {
         Integer manySel = Integer.valueOf(request.getParameter("manySel"));
         Integer queAns = Integer.valueOf(request.getParameter("queAns"));
         Integer program = Integer.valueOf(request.getParameter("program"));
+        Integer sucErr = Integer.valueOf(request.getParameter("sucErr"));
+        Integer space = Integer.valueOf(request.getParameter("space"));
         Integer contestId = Integer.valueOf(request.getParameter("contestId"));
         Integer subjectId = Integer.valueOf(request.getParameter("subjectId"));
         List<Question> allQuestion = questionService.getQuestionBySubjectId(subjectId);
@@ -127,7 +129,7 @@ public class ContestController extends BaseController {
                 queCount.put(question.getQuestionType(),questions);
             }
         }
-        for (int i = 0; i < 4;i++){
+        for (int i = 0; i < 6;i++){
             switch (i){
                 case 0:
                     type = contestRandomQuestions(soloSel, queCount.get(i), contestId,i);
@@ -149,6 +151,18 @@ public class ContestController extends BaseController {
                     break;
                 case 3:
                     type = contestRandomQuestions(program, queCount.get(i), contestId,i);
+                    if (type == 0){
+                        return AjaxResult.fixedError(QexzWebError.QUESTION_COUNT);
+                    }
+                    break;
+                case 4:
+                    type = contestRandomQuestions(space, queCount.get(i), contestId,i);
+                    if (type == 0){
+                        return AjaxResult.fixedError(QexzWebError.QUESTION_COUNT);
+                    }
+                    break;
+                case 5:
+                    type = contestRandomQuestions(sucErr, queCount.get(i), contestId,i);
                     if (type == 0){
                         return AjaxResult.fixedError(QexzWebError.QUESTION_COUNT);
                     }

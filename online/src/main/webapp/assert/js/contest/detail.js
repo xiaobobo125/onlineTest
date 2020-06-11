@@ -24,6 +24,10 @@ var contestDetailPage = {
             contestDetailPage.finishContestAction();
         });
 
+        var btnHtml='<button type="button" class="ui disabled positive button">上一题</button>\n' +
+            '<button type="button" onclick="contestDetailPage.targetQuestionAction('+1+')" class="ui positive button">下一题</button>'
+        $('#preNextBtn').html(btnHtml);
+
         if (contestDetailPage.data.questions[0].questionType == 0) {
             $('#currentQuetionTitle').html('(单选)'+contestDetailPage.data.questions[0].content+'('+contestDetailPage.data.questions[0].score+'分)');
             var selectOptionStr = '<div class="grouped fields">\n' +
@@ -82,6 +86,22 @@ var contestDetailPage = {
                 '    </div>\n' +
                 '  </div>';
             $('#currentQuestionAnswer').html(selectOptionStr);
+        }else if (contestDetailPage.data.questions[0].questionType == 5) {
+            $('#currentQuetionTitle').html('(判断)'+contestDetailPage.data.questions[0].content+'('+contestDetailPage.data.questions[0].score+'分)');
+            var selectOptionStr = '<div class="grouped fields">\n' +
+                '    <div class="field">\n' +
+                '      <div class="ui toggle checkbox">\n' +
+                '        <input type="radio" name="questionAnswer" value="A"/>\n' +
+                '        <label>对.&nbsp;&nbsp;'+contestDetailPage.data.questions[0].optionA+'</label>\n' +
+                '      </div>\n' +
+                '    </div>\n' +
+                '    <div class="field">\n' +
+                '      <div class="ui toggle checkbox">\n' +
+                '        <input type="radio" name="questionAnswer" value="B"/>\n' +
+                '        <label>错.&nbsp;&nbsp;'+contestDetailPage.data.questions[0].optionB+'</label>\n' +
+                '      </div>\n' +
+                '    </div>\n' ;
+            $('#currentQuestionAnswer').html(selectOptionStr);
         } else {
             $('#currentQuetionTitle').html('(问答)'+contestDetailPage.data.questions[0].content+'('+contestDetailPage.data.questions[0].score+'分)');
             var selectOptionStr = '<div class="field">\n' +
@@ -101,6 +121,23 @@ var contestDetailPage = {
     targetQuestionAction: function (index) {
         var preIndex = contestDetailPage.data.currentQuestionIndex;
         contestDetailPage.data.currentQuestionIndex = index;
+        var nextIndex = index+1;
+        var preIn = index - 1;
+        var preNextBtnHtml='<button type="button" onclick="contestDetailPage.targetQuestionAction('+preIn+')" class="ui  positive button">上一题</button>\n' +
+            '<button type="button" onclick="contestDetailPage.targetQuestionAction('+nextIndex+')" class="ui positive button">下一题</button>';
+        var preBtnHtml='<button type="button" class="ui disabled positive button">上一题</button>\n' +
+            '<button type="button" onclick="contestDetailPage.targetQuestionAction('+nextIndex+')" class="ui positive button">下一题</button>';
+
+        var nextBtnHtml='<button type="button" onclick="contestDetailPage.targetQuestionAction('+preIn+')" class="ui  positive button">上一题</button>\n' +
+            '<button type="button" class="ui disabled positive button">下一题</button>';
+
+        if(nextIndex >= contestDetailPage.data.questions.length){
+            $('#preNextBtn').html(nextBtnHtml);
+        }else if (preIn < 0) {
+            $('#preNextBtn').html(preBtnHtml);
+        }else{
+            $('#preNextBtn').html(preNextBtnHtml);
+        }
 
         //记录答案
         if (contestDetailPage.data.questions[preIndex].questionType == 0) {
@@ -114,6 +151,14 @@ var contestDetailPage = {
                 //console.log($(this).val());
                 contestDetailPage.data.questions[preIndex].answer += $(this).val();
             });
+        }else if (contestDetailPage.data.questions[preIndex].questionType == 5) {
+            contestDetailPage.data.questions[preIndex].answer = '';
+            $.each($("input[name='questionAnswer']:checked"),function(){
+                //console.log($(this).val());
+                contestDetailPage.data.questions[preIndex].answer += $(this).val();
+            });
+        }else if (contestDetailPage.data.questions[preIndex].questionType == 4) {
+            contestDetailPage.data.questions[preIndex].answer = $("#questionAnswer").val();
         } else {
             //console.log($("#questionAnswer").val());
             contestDetailPage.data.questions[preIndex].answer = $("#questionAnswer").val();
@@ -195,6 +240,42 @@ var contestDetailPage = {
                     }
                 });
             }
+        }else if (contestDetailPage.data.questions[index].questionType == 5) {
+            $('#currentQuetionTitle').html('(判断)'+contestDetailPage.data.questions[index].content+'('+contestDetailPage.data.questions[index].score+'分)');
+            var selectOptionStr = '<div class="grouped fields">\n' +
+                '    <div class="field">\n' +
+                '      <div class="ui toggle checkbox">\n' +
+                '        <input type="radio" name="questionAnswer" value="A"/>\n' +
+                '        <label>A.&nbsp;&nbsp;'+contestDetailPage.data.questions[index].optionA+'</label>\n' +
+                '      </div>\n' +
+                '    </div>\n' +
+                '    <div class="field">\n' +
+                '      <div class="ui toggle checkbox">\n' +
+                '        <input type="radio" name="questionAnswer" value="B"/>\n' +
+                '        <label>B.&nbsp;&nbsp;'+contestDetailPage.data.questions[index].optionB+'</label>\n' +
+                '      </div>\n' +
+                '    </div>\n';
+            $('#currentQuestionAnswer').html(selectOptionStr);
+
+            //显示之前作答区的答案
+            if (contestDetailPage.data.questions[index].answer != '') {
+                $.each($("input[name='questionAnswer']"),function(){
+                    if (contestDetailPage.data.questions[index].answer.indexOf($(this).val()) != -1) {
+                        $(this).attr("checked", "checked");
+                    }
+                });
+            }
+        }else if(contestDetailPage.data.questions[index].questionType == 4){
+            $('#currentQuetionTitle').html('(填空)'+contestDetailPage.data.questions[index].content+'('+contestDetailPage.data.questions[index].score+'分)');
+            var selectOptionStr = '<div class="field">\n' +
+                '                        <textarea  id="questionAnswer" name="questionAnswer" rows="20"></textarea>\n' +
+                '                    </div>';
+            $('#currentQuestionAnswer').html(selectOptionStr);
+
+            //显示之前作答区的答案
+            if (contestDetailPage.data.questions[index].answer != '') {
+                $('#questionAnswer').val(contestDetailPage.data.questions[index].answer);
+            }
         } else {
             $('#currentQuetionTitle').html('(问答)'+contestDetailPage.data.questions[index].content+'('+contestDetailPage.data.questions[index].score+'分)');
             var selectOptionStr = '<div class="field">\n' +
@@ -240,6 +321,15 @@ var contestDetailPage = {
                 //console.log($(this).val());
                 contestDetailPage.data.questions[index].answer += $(this).val();
             });
+        }else if (contestDetailPage.data.questions[index].questionType == 5) {
+            contestDetailPage.data.questions[index].answer = '';
+            $.each($("input[name='questionAnswer']:checked"),function(){
+                //console.log($(this).val());
+                contestDetailPage.data.questions[index].answer += $(this).val();
+            });
+        }else if (contestDetailPage.data.questions[index].questionType == 4) {
+            //console.log($("#questionAnswer").val());
+            contestDetailPage.data.questions[index].answer = $("#questionAnswer").val();
         } else {
             //console.log($("#questionAnswer").val());
             contestDetailPage.data.questions[index].answer = $("#questionAnswer").val();

@@ -40,18 +40,9 @@
                         <a th:if="${current_account != null}" th:href="@{'/problemset/'+${item.id}+'/problems'}" th:text="${item.name}">计算机组成原理</a>
                         <a th:if="${current_account == null}" th:onclick="'app.showLogin()'" th:text="${item.name}">计算机组成原理</a>
                     </div>
-                    <p class="meta">
-                        <i class="user icon"></i>
-                        <a href="javascript:void(0)">admin</a>
-                    </p>
                     <p class="description"></p>
                 </div>
                 <div class="extra content">
-                    <span class="right floated">
-                        <span>
-                        <i class="globe icon"></i>私有题库
-                        </span>
-                    </span>
                     <i class="file text outline icon"></i>
                     <span th:text="${item.questionNum}"></span>
                 </div>

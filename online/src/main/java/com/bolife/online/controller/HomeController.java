@@ -57,12 +57,17 @@ public class HomeController extends BaseController {
             long time = startTime.getTime();
             long endDate = contest.getEndTime().getTime();
             long nowDate = new Date().getTime();
+
+            if(time > nowDate ){
+                contestService.updateContestStateById(contest.getId(),0);
+                contest.setState(0);
+            }
             if(time <= nowDate && nowDate < endDate){
                 contestService.updateContestStateById(contest.getId(),1);
                 contest.setState(1);
             }
             if(endDate <= nowDate && contest.getState() == 1){
-                contestService.updateContestStateById(contest.getId(),3);
+                contestService.updateContestStateById(contest.getId(),2);
                 contest.setState(2);
             }
             if(user != null) {
@@ -89,6 +94,12 @@ public class HomeController extends BaseController {
         model.addAttribute(FinalDefine.CURRENT_ACCOUNT,user);
         logger.info("获取题目列表");
         Map<String, Object> subjects = subjectService.getSubjects(page, FinalDefine.contestPageSize);
+        List<Subject> subjectList = (List<Subject>) subjects.get("subjects");
+        for (Subject subject : subjectList) {
+            Integer countQuestionBySubject = questionService.getCountQuestionBySubject(subject.getId());
+            subject.setQuestionNum(countQuestionBySubject);
+        }
+        subjects.put("subjects",subjectList);
         model.addAttribute(FinalDefine.DATA,subjects);
         return "/problem/problemset";
     }
@@ -135,6 +146,9 @@ public class HomeController extends BaseController {
                               @RequestParam(value = "difficulty", defaultValue = "0") int difficulty,
                               Model model) {
         Account currentAccount = (Account) request.getSession().getAttribute(FinalDefine.CURRENT_ACCOUNT);
+        if(currentAccount == null){
+            return "redirect: /404";
+        }
         model.addAttribute(FinalDefine.CURRENT_ACCOUNT, currentAccount);
         Map<String,Object> data = questionService.getQuestionByPCD(page,FinalDefine.questionPageSize,problemsetId,content,difficulty);
         Subject subject = subjectService.getSubjectById(problemsetId);

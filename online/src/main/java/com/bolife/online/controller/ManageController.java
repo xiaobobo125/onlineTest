@@ -3,6 +3,7 @@ package com.bolife.online.controller;
 import com.bolife.online.entity.*;
 import com.bolife.online.service.*;
 import com.bolife.online.util.FinalDefine;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -73,12 +74,16 @@ public class ManageController {
             long time = startTime.getTime();
             long endDate = contest.getEndTime().getTime();
             long nowDate = new Date().getTime();
+            if(time > nowDate ){
+                contestService.updateContestStateById(contest.getId(),0);
+                contest.setState(0);
+            }
             if (time <= nowDate && nowDate < endDate) {
                 contestService.updateContestStateById(contest.getId(), 1);
                 contest.setState(1);
             }
             if (endDate <= nowDate && contest.getState() == 1) {
-                contestService.updateContestStateById(contest.getId(), 3);
+                contestService.updateContestStateById(contest.getId(), 2);
                 contest.setState(2);
             }
         }
@@ -156,7 +161,6 @@ public class ManageController {
                                Model model) {
         Account currentAccount = (Account) request.getSession().getAttribute(FinalDefine.CURRENT_ACCOUNT);
         //TODO::处理
-        //currentAccount = accountService.getAccountByUsername("admin");
         model.addAttribute(FinalDefine.CURRENT_ACCOUNT, currentAccount);
         Map<String, Object> data = questionService.getQuestionsByContent(page,
                 FinalDefine.questionPageSize, content);
@@ -232,7 +236,6 @@ public class ManageController {
                               Model model) {
         Account currentAccount = (Account) request.getSession().getAttribute(FinalDefine.CURRENT_ACCOUNT);
         //TODO::处理
-        //currentAccount = accountService.getAccountByUsername("admin");
         model.addAttribute(FinalDefine.CURRENT_ACCOUNT, currentAccount);
         Map<String, Object> data = commenService.getComments(page, FinalDefine.commentPageSize);
         List<Comment> comments = (List<Comment>) data.get("comments");

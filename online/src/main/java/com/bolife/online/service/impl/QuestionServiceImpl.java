@@ -10,6 +10,7 @@ import com.bolife.online.util.ExcelUtil;
 import com.bolife.online.util.FinalDefine;
 import com.github.pagehelper.PageHelper;
 import jdk.internal.util.xml.impl.Input;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -172,12 +173,16 @@ public class QuestionServiceImpl implements QuestionService {
     public Integer insertManyFile(InputStream in,String filename, Integer subjectId) {
         Integer cou = 0;
         try {
-            List<List<Object>> bankListByExcel = ExcelUtil.getBankListByExcel(in, "D:/test.xls");
+            List<List<Object>> bankListByExcel = ExcelUtil.getBankListByExcel(in, filename);
             List<Question> questions = new ArrayList<>();
             for (List<Object> objects : bankListByExcel) {
                 Question qu = new Question();
                 List<Object> list = objects;
                 String flag = String.valueOf(list.get(0));
+                String title = String.valueOf(list.get(1));
+                if(StringUtils.isEmpty(title)){
+                    continue;
+                }
                 qu.setTitle(String.valueOf(list.get(1)));
                 qu.setContent(String.valueOf(list.get(1)));
                 if(flag.equals("xz")){
@@ -191,17 +196,20 @@ public class QuestionServiceImpl implements QuestionService {
                 }else  if(flag.equals("tk")){
                     String answer = "";
                     for (int i = 2 ; i < list.size();i++){
-                        answer += String.valueOf(list.get(i));
-                        answer+= FinalDefine.SPLIT_CHAR;
+                        String ans = String.valueOf(list.get(i));
+                        if(StringUtils.isNotEmpty(ans)){
+                            answer += String.valueOf(list.get(i));
+                            answer+= FinalDefine.SPLIT_CHAR;
+                        }
                     }
-                    qu.setScore(2);
+                    qu.setScore(4);
                     qu.setAnswer(answer);
-                    qu.setQuestionType(2);
+                    qu.setQuestionType(4);
                 }else if(flag.equals("pd")){
                     qu.setOptionA(String.valueOf(list.get(2)));
                     qu.setOptionB(String.valueOf(list.get(3)));
                     qu.setAnswer(String.valueOf(list.get(4)));
-                    qu.setQuestionType(1);
+                    qu.setQuestionType(5);
                     qu.setScore(1);
                 }else if (flag.equals("hd")){
                     qu.setAnswer(String.valueOf(list.get(2)));

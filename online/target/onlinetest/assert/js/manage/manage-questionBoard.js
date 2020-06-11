@@ -372,7 +372,7 @@ var manageQuestionBoardPage = {
             contentType: false,
             success:function(result){
                 if (result && result['success']) {
-                    alert(123);
+                    window.location.reload();
                 } else {
                     $('#updateErrorMessage').html('<i class="close icon"></i><div class="header">错误提示</div>\n' +
                         '                <p>'+result.message+'</p>');
@@ -381,8 +381,8 @@ var manageQuestionBoardPage = {
 
             },
             error:function (e) {
-                alert(1+e);
-
+                console.log(e);
+                window.location.reload();
             }
         });
     },

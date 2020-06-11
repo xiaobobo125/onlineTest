@@ -64,6 +64,8 @@ var manageEditContestProblemPage = {
         var manySel = $('#manySel').val();
         var queAns = $('#queAns').val();
         var program = $('#program').val();
+        var space = $('#space').val();
+        var sucErr = $('#sucErr').val();
         var contestId = manageEditContestProblemPage.data.contest.id;
         var subjectId = manageEditContestProblemPage.data.contest.subjectId;
 
@@ -77,6 +79,8 @@ var manageEditContestProblemPage = {
                     manySel: manySel,
                     queAns: queAns,
                     program: program,
+                    space: space,
+                    sucErr: sucErr,
                     contestId: contestId,
                     subjectId: subjectId,
                 },
