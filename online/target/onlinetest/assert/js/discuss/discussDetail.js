@@ -97,4 +97,71 @@ var discussDetailPage = {
             }
         });
     },
+    addGood:function () {
+        $('#good').css('color', 'red');
+        var userId = discussDetailPage.data.userId;
+        var post = discussDetailPage.data.post;
+        $.ajax({
+            url: "/discuss/api/addGood",
+            type : "POST",
+            dataType: "json",
+            contentType : "application/json;charset=UTF-8",
+            <!-- 向后端传输的数据 -->
+            data : JSON.stringify({
+                accountId: userId,
+                postId: post.id,
+            }),
+            success: function (data) {
+                window.location.reload();
+            },
+            error: function () {
+                alert("获取数据出错!");
+            },
+        });
+    },
+    subGood:function () {
+        $('#good').css('color', 'black');
+        var userId = discussDetailPage.data.userId;
+        var post = discussDetailPage.data.post;
+        $.ajax({
+            url: "/discuss/api/subGood",
+            type : "POST",
+            dataType: "json",
+            contentType : "application/json;charset=UTF-8",
+            <!-- 向后端传输的数据 -->
+            data : JSON.stringify({
+                accountId: userId,
+                postId: post.id,
+            }),
+            success: function (data) {
+                window.location.reload();
+            },
+            error: function () {
+                alert("获取数据出错!");
+            },
+        });
+    },
+    increaseViewCount: function(articleId) {
+        if ($.cookie("viewId") != discussDetailPage.data.post.id || $.cookie("viewId") == null) {
+            $.ajax({
+                async: false,
+                type: "GET",
+                url: app.URL.addViewUrl() + discussDetailPage.data.post.id,
+                success: function (data) {
+                    console.log(data);
+                    $(".articleViewCount").html(data);
+                    $.cookie(
+                        "viewId",
+                        articleId,//需要cookie写入的业务
+                        {
+                            "path": "/", //cookie的默认属性
+                        }
+                    );
+                },
+                error: function () {
+                    // alert("获取数据出错!");
+                },
+            });
+        }
+    },
 };

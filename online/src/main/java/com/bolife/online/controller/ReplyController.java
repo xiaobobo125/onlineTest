@@ -22,7 +22,7 @@ public class ReplyController {
     @Autowired
     private ReplyService replyService;
 
-    @RequestMapping(value = "api/addReply",method = RequestMethod.POST)
+    @RequestMapping(value = "/api/addReply",method = RequestMethod.POST)
     @ResponseBody
     public AjaxResult addReply(@RequestBody Reply reply){
         AjaxResult ajaxResult = new AjaxResult();

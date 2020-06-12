@@ -107,4 +107,9 @@ public class PostServiceImpl implements PostService {
     public boolean deletePostById(int id) {
         return postMapper.deletePost(id) > 0;
     }
+
+    @Override
+    public void updateGoodNumById(int i, int id) {
+        postMapper.updateGoodNumById(i,id);
+    }
 }

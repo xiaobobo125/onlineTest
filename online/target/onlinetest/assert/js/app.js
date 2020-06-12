@@ -59,6 +59,12 @@ var app = {
         addReplyUrl: function () {
             return app.data.contextPath+"/reply/api/addReply";
         },
+        addGoodUrl: function () {
+            return app.data.contextPath+"/discuss/api/addGood";
+        },
+        addViewUrl: function () {
+            return app.data.contextPath+"/discuss/api/addView";
+        },
         myDiscussPostUrl: function () {
             return app.data.contextPath+"/account/myDiscussPost";
         },

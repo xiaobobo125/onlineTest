@@ -23,4 +23,6 @@ public interface PostService {
     Map<String,Object> getPostsByAuthorId(int page, int postPageSize, int id);
 
     boolean deletePostById(int id);
+
+    void updateGoodNumById(int i, int id);
 }

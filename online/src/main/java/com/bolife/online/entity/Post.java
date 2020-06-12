@@ -17,6 +17,24 @@ public class Post {
     private Date lastReplyTime;
     private int replyNum;
     private String title;
+    private int goodNum;
+    private int viewNum;
+
+    public int getViewNum() {
+        return viewNum;
+    }
+
+    public void setViewNum(int viewNum) {
+        this.viewNum = viewNum;
+    }
+
+    public int getGoodNum() {
+        return goodNum;
+    }
+
+    public void setGoodNum(int goodNum) {
+        this.goodNum = goodNum;
+    }
 
     private Account author;
 

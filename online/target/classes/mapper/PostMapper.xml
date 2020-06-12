@@ -10,6 +10,8 @@
         <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
         <result column="last_reply_time" property="lastReplyTime" jdbcType="TIMESTAMP" />
         <result column="reply_num" property="replyNum" jdbcType="INTEGER" />
+        <result column="good_num" property="goodNum" jdbcType="INTEGER" />
+        <result column="view_num" property="viewNum" jdbcType="INTEGER" />
         <result column="title" property="title" jdbcType="VARCHAR" />
     </resultMap>
     <sql id="Base_Column_List" >
@@ -40,6 +42,13 @@
          reply_num = reply_num + 1, last_reply_time = #{lastReplyTime}
         WHERE
         id = #{postId}
+    </update>
+    <update id="updateGoodNumById">
+        UPDATE t_post
+        SET
+         good_num = #{goodNum}
+        WHERE
+        id = #{id}
     </update>
     <select id="getCountByAuthorId" resultType="int">
         SELECT

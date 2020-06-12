@@ -30,4 +30,6 @@ public interface PostMapper {
     int getCountByAuthorId(int authorId);
 
     List<Post> getPostsByAuthorId(int authorId);
+
+    void updateGoodNumById(@Param("goodNum") int goodNum,@Param("id") int id);
 }

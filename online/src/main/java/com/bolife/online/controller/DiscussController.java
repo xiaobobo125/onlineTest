@@ -1,9 +1,7 @@
 package com.bolife.online.controller;
 
-import com.bolife.online.entity.Account;
-import com.bolife.online.entity.Comment;
-import com.bolife.online.entity.Post;
-import com.bolife.online.entity.Reply;
+import com.bolife.online.dto.AjaxResult;
+import com.bolife.online.entity.*;
 import com.bolife.online.service.*;
 import com.bolife.online.util.FinalDefine;
 import org.apache.ibatis.annotations.Param;
@@ -11,10 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -44,6 +39,9 @@ public class DiscussController {
     @Autowired
     private ReplyService replyService;
 
+    @Autowired
+    private GoodService goodService;
+
     @RequestMapping(value = "/{postId}",method = RequestMethod.GET)
     public String discussDetail(HttpServletRequest request, @PathVariable("postId") Integer postId, Model model) {
         Account currentAccount = (Account) request.getSession().getAttribute(FinalDefine.CURRENT_ACCOUNT);
@@ -53,6 +51,16 @@ public class DiscussController {
         Account author = accountService.getAccountById(post.getAuthorId());
         post.setAuthor(author);
         data.put("post",post);
+        Integer flag = 0;
+        if(post.getGoodNum() > 0 && currentAccount != null){
+            List<Goods> goodsByPostId = goodService.getGoodsByPostId(postId);
+            for (Goods goods : goodsByPostId) {
+                if(goods.getAccountId() == currentAccount.getId()){
+                    flag = 1;
+                    break;
+                }
+            }
+        }
         List<Comment> comments = commenService.getCommentByPostId(postId);
         List<Reply> replies = replyService.getReplyByPostId(postId);
         List<Account> allAccount = accountService.getAllAccount();
@@ -84,9 +92,9 @@ public class DiscussController {
         } else {
             data.put("userId", 0);
         }
-
         model.addAttribute(FinalDefine.CURRENT_ACCOUNT, currentAccount);
         model.addAttribute(FinalDefine.DATA, data);
+        model.addAttribute("goodState",flag);
         return "/discuss/discussDetail";
     }
     @RequestMapping(value="/post", method= RequestMethod.GET)
@@ -113,5 +121,23 @@ public class DiscussController {
         model.addAttribute(FinalDefine.CURRENT_ACCOUNT,currentAccount);
         postService.deletePost(pid);
         return "redirect:/discuss";
+    }
+
+    @RequestMapping(value = "/api/addGood",method = RequestMethod.POST)
+    @ResponseBody
+    public AjaxResult addGood(@RequestBody Goods goods){
+        Integer count = goodService.addGood(goods);
+        Post postById = postService.getPostById(goods.getPostId());
+        postService.updateGoodNumById(postById.getGoodNum()+1,postById.getId());
+        return new AjaxResult().setData(postById);
+    }
+
+    @RequestMapping(value = "/api/subGood",method = RequestMethod.POST)
+    @ResponseBody
+    public AjaxResult subGood(@RequestBody Goods goods){
+        Integer count = goodService.subGood(goods);
+        Post postById = postService.getPostById(goods.getPostId());
+        postService.updateGoodNumById(postById.getGoodNum()-1,postById.getId());
+        return new AjaxResult().setData(postById);
     }
 }

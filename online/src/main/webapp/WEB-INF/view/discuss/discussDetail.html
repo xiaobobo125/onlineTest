@@ -42,11 +42,13 @@
                                 <i class="talk outline icon"></i>
                                 <span th:text="${data['post'].replyNum}">23</span>
                                 |
-                                <i class="thumbs outline up icon"></i>
-                                <span>17</span>
+                                <i class="thumbs outline up icon" th:if="${ current_account == null}" onclick="app.showLogin()" id="good"></i>
+                                <i class="thumbs outline up icon" th:if="${ current_account != null and goodState == 1}" onclick="discussDetailPage.subGood()" id="good" style="color: red"></i>
+                                <i class="thumbs outline up icon" th:if="${ current_account != null and goodState != 1}" onclick="discussDetailPage.addGood()" id="good"></i>
+                                <span id="goodNum" th:text="${data['post'].goodNum}">17</span>
                                 |
                                 <i class="unhide icon"></i>
-                                <span>400</span>
+                                <span th:text="${data['post'].viewNum}">400</span>
                         </span>
                     </div>
                 </div>
