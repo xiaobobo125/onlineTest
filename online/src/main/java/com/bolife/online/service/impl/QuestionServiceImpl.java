@@ -9,13 +9,10 @@ import com.bolife.online.service.QuestionService;
 import com.bolife.online.util.ExcelUtil;
 import com.bolife.online.util.FinalDefine;
 import com.github.pagehelper.PageHelper;
-import jdk.internal.util.xml.impl.Input;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.*;

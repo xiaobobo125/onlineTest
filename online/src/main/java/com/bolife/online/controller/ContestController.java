@@ -118,6 +118,7 @@ public class ContestController extends BaseController {
         Integer space = Integer.valueOf(request.getParameter("space"));
         Integer contestId = Integer.valueOf(request.getParameter("contestId"));
         Integer subjectId = Integer.valueOf(request.getParameter("subjectId"));
+        Integer scoreCount = contestService.getContestById(contestId).getTotalScore();
         List<Question> allQuestion = questionService.getQuestionBySubjectId(subjectId);
         Map<Integer,List<Question>> queCount = new HashMap<>();
         for (Question question : allQuestion) {
@@ -132,43 +133,50 @@ public class ContestController extends BaseController {
         for (int i = 0; i < 6;i++){
             switch (i){
                 case 0:
-                    type = contestRandomQuestions(soloSel, queCount.get(i), contestId,i);
+                    type = contestRandomQuestions(soloSel, queCount.get(i), contestId,i,scoreCount);
                     if (type == 0){
                         return AjaxResult.fixedError(QexzWebError.QUESTION_COUNT);
                     }
+                    scoreCount += type;
                     break;
                 case 1:
-                    type = contestRandomQuestions(manySel, queCount.get(i), contestId,i);
+                    type = contestRandomQuestions(manySel, queCount.get(i), contestId,i,scoreCount);
                     if (type == 0){
                         return AjaxResult.fixedError(QexzWebError.QUESTION_COUNT);
                     }
+                    scoreCount += type;
                     break;
                 case 2:
-                    type = contestRandomQuestions(queAns, queCount.get(i), contestId,i);
+                    type = contestRandomQuestions(queAns, queCount.get(i), contestId,i,scoreCount);
                     if (type == 0){
                         return AjaxResult.fixedError(QexzWebError.QUESTION_COUNT);
                     }
+                    scoreCount += type;
                     break;
                 case 3:
-                    type = contestRandomQuestions(program, queCount.get(i), contestId,i);
+                    type = contestRandomQuestions(program, queCount.get(i), contestId,i,scoreCount);
                     if (type == 0){
                         return AjaxResult.fixedError(QexzWebError.QUESTION_COUNT);
                     }
+                    scoreCount += type;
                     break;
                 case 4:
-                    type = contestRandomQuestions(space, queCount.get(i), contestId,i);
+                    type = contestRandomQuestions(space, queCount.get(i), contestId,i,scoreCount);
                     if (type == 0){
                         return AjaxResult.fixedError(QexzWebError.QUESTION_COUNT);
                     }
+                    scoreCount += type;
                     break;
                 case 5:
-                    type = contestRandomQuestions(sucErr, queCount.get(i), contestId,i);
+                    type = contestRandomQuestions(sucErr, queCount.get(i), contestId,i,scoreCount);
                     if (type == 0){
                         return AjaxResult.fixedError(QexzWebError.QUESTION_COUNT);
                     }
+                    scoreCount += type;
                     break;
             }
         }
+        contestService.updataTotalScore(contestId,scoreCount);
         return new AjaxResult().setData(type);
     }
 }

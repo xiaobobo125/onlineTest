@@ -52,6 +52,13 @@
         WHERE
         id = #{id}
     </update>
+    <update id="updateTotalScore" parameterType="com.bolife.online.entity.Contest">
+        UPDATE t_contest
+        SET
+        total_score = #{totalScore}
+        WHERE
+        id = #{contestId}
+    </update>
 
     <delete id="deleteContest" parameterType="int">
         DELETE FROM t_contest

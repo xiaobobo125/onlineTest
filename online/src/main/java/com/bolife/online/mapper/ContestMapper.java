@@ -35,4 +35,6 @@ public interface ContestMapper {
 
     void updateContestStateById(@Param("id") int id,
                                 @Param("contestState") int contestState);
+
+    void updateTotalScore(@Param("contestId") Integer contestId, @Param("totalScore") Integer totalScore);
 }

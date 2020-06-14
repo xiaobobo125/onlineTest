@@ -20,7 +20,6 @@ var contestIndexPage = {
 
         //考试倒计时
         var killTime = new Date();
-        //killTime.setDate(killTime.getDate()+5);
         for (var i = 0; i < contests.length; i++) {
             if (contests[i].state == 0) {
                 killTime = new Date(contests[i].startTime);
@@ -31,7 +30,6 @@ var contestIndexPage = {
         $("#contest-time-countdown").countdown(killTime, function (event) {
             // 事件格式
             var format = event.strftime("考试倒计时: %D天 %H时 %M分 %S秒");
-            console.log(format);
             $("#contest-time-countdown").html(format);
         }).on('finish.countdown', function () {
             // 事件完成后回调事件，获取秒杀地址，控制业务逻辑

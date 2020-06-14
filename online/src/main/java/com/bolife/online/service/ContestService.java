@@ -25,4 +25,6 @@ public interface ContestService {
     Integer addContest(Contest contest);
 
     void updateContestStateById(int id, int contestState);
+
+    void updataTotalScore(Integer contestId, Integer totalScore);
 }

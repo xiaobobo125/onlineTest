@@ -97,4 +97,9 @@ public class ContestServiceImpl implements ContestService {
     public void updateContestStateById(int id, int contestState) {
         contestMapper.updateContestStateById(id,contestState);
     }
+
+    @Override
+    public void updataTotalScore(Integer contestId, Integer totalScore) {
+        contestMapper.updateTotalScore(contestId,totalScore);
+    }
 }

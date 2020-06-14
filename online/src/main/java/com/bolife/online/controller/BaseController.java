@@ -4,6 +4,7 @@ import com.bolife.online.dto.AjaxResult;
 import com.bolife.online.entity.Question;
 import com.bolife.online.entity.Question_Contest;
 import com.bolife.online.exception.QexzWebError;
+import com.bolife.online.service.ContestService;
 import com.bolife.online.service.QuestionService;
 import com.bolife.online.service.Question_ContentService;
 import org.apache.logging.log4j.LogManager;
@@ -24,12 +25,13 @@ public class BaseController{
 
     @Autowired
     private QuestionService questionService;
+
+    @Autowired
+    private ContestService contestService;
     //log4j2
     protected Logger logger = LogManager.getLogger(BaseController.class);
 
-    public Integer contestRandomQuestions(Integer questionType,List<Question> questions,Integer contestId,Integer type){
-        AjaxResult ajaxResult = new AjaxResult();
-        Integer count = 1;
+    public Integer contestRandomQuestions(Integer questionType,List<Question> questions,Integer contestId,Integer type,Integer scoreCount){
         List<Question_Contest> haveQuestion = question_contentService.getByContestId(contestId);
         if(haveQuestion != null && haveQuestion.size() > 0){
             List<Question> questionByIds = questionService.getQuestionByIds(haveQuestion);
@@ -39,6 +41,7 @@ public class BaseController{
                 }
             }
         }
+
         if(questionType > 0){
             List<Question> queTypes = new ArrayList<>();
             if(questions == null || questions.size() < questionType){
@@ -48,10 +51,11 @@ public class BaseController{
                 Random random = new Random();
                 int ele = random.nextInt(questions.size());
                 queTypes.add(questions.get(ele));
+                scoreCount += questions.get(ele).getScore();
                 questions.remove(ele);
             }
-            count = question_contentService.saveQuestion(contestId, queTypes);
+            question_contentService.saveQuestion(contestId, queTypes);
         }
-        return count;
+        return scoreCount;
     }
 }
