@@ -27,6 +27,9 @@
 <div class="ui problemList container">
     <div class="ui secondary pointing menu">
         <a class="active item"><i class="list icon"></i>题目列表</a>
+        <div class="right item">
+            <a th:if="${current_account != null}" th:href="@{'/question/test/'+${data['subject'].id}}" class="positive ui button"><i class="write icon"></i>在线练习</a>
+        </div>
     </div>
     <div class="ui accordion segment">
         <div class="title"><i class="dropdown icon"></i>筛选</div>
@@ -72,6 +75,8 @@
                 <span th:if="${item.questionType == 1}">多选题</span>
                 <span th:if="${item.questionType == 2}">问答题</span>
                 <span th:if="${item.questionType == 3}">编程题</span>
+                <span th:if="${item.questionType == 5}">判断题</span>
+                <span th:if="${item.questionType == 4}">填空题</span>
             </td>
             <td><a th:href="@{'/problemset/'+${item.subjectId}+'/problem/'+${item.id}}" class="tiny blue ui button">详情</a></td>
         </tr>

@@ -1,8 +1,7 @@
 package com.bolife.online.controller;
 
 import com.bolife.online.dto.AjaxResult;
-import com.bolife.online.entity.Account;
-import com.bolife.online.entity.Question;
+import com.bolife.online.entity.*;
 import com.bolife.online.exception.QexzWebError;
 import com.bolife.online.service.QuestionService;
 import com.bolife.online.service.Question_ContentService;
@@ -19,6 +18,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -35,6 +36,9 @@ public class QuestionController extends BaseController {
 
     @Autowired
     private Question_ContentService question_contentService;
+
+    @Autowired
+    private SubjectService subjectService;
 
     //添加题目
     @RequestMapping(value="/api/addQuestion", method= RequestMethod.POST)
@@ -92,6 +96,26 @@ public class QuestionController extends BaseController {
             return AjaxResult.fixedError(QexzWebError.UPLOAD_FILE_IMAGE_ANALYZE_ERROR);
         }
         return ajaxResult.setData(integer);
+    }
+
+    @RequestMapping("/test/{subjectId}")
+    public String goTest(HttpServletRequest request,
+                         @PathVariable("subjectId") int subjectId,
+                         Model model){
+        Account currentAccount = (Account) request.getSession().getAttribute(FinalDefine.CURRENT_ACCOUNT);
+        //TODO::拦截器过滤处理
+        if (currentAccount == null) {
+            //用户未登录直接返回首页面
+            return "redirect:/";
+        }
+        Map<String, Object> data = new HashMap<>();
+        model.addAttribute(FinalDefine.CURRENT_ACCOUNT, currentAccount);
+        List<Question> questionBySubjectId = questionService.getQuestionBySubjectId(subjectId);
+        Subject subjectById = subjectService.getSubjectById(subjectId);
+        data.put("contest", subjectById);
+        data.put("questions", questionBySubjectId);
+        model.addAttribute(FinalDefine.DATA, data);
+        return "problem/proConDetail";
     }
 
 }
